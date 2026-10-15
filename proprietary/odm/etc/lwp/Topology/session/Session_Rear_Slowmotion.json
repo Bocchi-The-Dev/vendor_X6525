@@ -22,7 +22,8 @@
         },
         "pipeline": [
             "Pipeline_Multimode_Preview",
-            "Pipeline_Slowmotion"
+            "Pipeline_Slowmotion",
+            "Pipeline_Async"
         ]
     }
 }

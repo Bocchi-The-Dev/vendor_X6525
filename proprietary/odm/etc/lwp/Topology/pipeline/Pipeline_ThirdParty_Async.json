@@ -38,6 +38,11 @@
             "type": "SceneDetectNode",
             "vendor": "SPRD",
             "id": "async_SceneDetect"
+        },
+        {
+            "type": "TranAlgoPluginNode",
+            "vendor": "TRAN",
+            "id": "pre_async_TranAlgoPlugin"
         }
     ],
     "rootNodes": ["SourceNode0","SourceNode1","SourceNode2","SourceNode3"],
@@ -86,6 +91,16 @@
             "from": {
                 "name": "async_FaceDetect",
                 "port": "out0"
+            },
+            "to": {
+                "name": "pre_async_TranAlgoPlugin",
+                "port": "pre_async_in"
+            }
+        },
+        {
+            "from": {
+                "name": "pre_async_TranAlgoPlugin",
+                "port": "pre_async_out"
             },
             "to": {
                 "name": "third_party_router",

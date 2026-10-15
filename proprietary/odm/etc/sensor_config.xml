@@ -4,48 +4,96 @@
   <-->
       <CameraModuleCfg>
         <SlotId>0</SlotId>
-        <SensorName>s5kjn1_sunny</SensorName>
+        <SensorName>hi1336</SensorName>
+        <ModuleId>0x04</ModuleId>
         <Facing>BACK</Facing>
         <Orientation>90</Orientation>
-        <Resource_cost>55</Resource_cost>
+        <Resource_cost>100</Resource_cost>
         <ConflictingDevice>1</ConflictingDevice>
         <VCM>
-            <AfName>fp5513e4</AfName>
+            <AfName>dw9714p</AfName>
             <Mode>0</Mode>
         </VCM>
         <OTP>
             <E2prom>
-                <OtpName>s5kjn1_sunny</OtpName>
-                <I2cAddr>0xa0</I2cAddr>
-                <E2promNum>3</E2promNum>
-                <E2promSize>16265</E2promSize>
+                <OtpName>hi1336_otp</OtpName>
+                 <I2cAddr>0xa0</I2cAddr>
+                <E2promNum>0</E2promNum>
+                <E2promSize>3445</E2promSize>
             </E2prom>
         </OTP>
         <TuningParameter>
-            <TuningName>s5kjn1_sunny</TuningName>
+            <TuningName>hi1336_1835</TuningName>
         </TuningParameter>
       </CameraModuleCfg>
       <CameraModuleCfg>
         <SlotId>0</SlotId>
-        <SensorName>ov50d40_shine</SensorName>
+        <SensorName>s5k3l6</SensorName>
         <Facing>BACK</Facing>
         <Orientation>90</Orientation>
-        <Resource_cost>55</Resource_cost>
-        <ConflictingDevice>1</ConflictingDevice>
+        <Resource_cost>100</Resource_cost>
+		<ConflictingDevice>1</ConflictingDevice>
         <VCM>
-            <AfName>aw86017csr</AfName>
+            <AfName>gt9772</AfName>
             <Mode>0</Mode>
         </VCM>
         <OTP>
             <E2prom>
-                <OtpName>ov50d40_shine</OtpName>
+                <OtpName>s5k3l6_header_otp</OtpName>
                 <I2cAddr>0xa0</I2cAddr>
                 <E2promNum>0</E2promNum>
-                <E2promSize>3789</E2promSize>
+                <E2promSize>3461</E2promSize>
             </E2prom>
         </OTP>
         <TuningParameter>
-            <TuningName>ov50d40_shine</TuningName>
+            <TuningName>s5k3l6_1836</TuningName>
+        </TuningParameter>
+      </CameraModuleCfg>
+      <CameraModuleCfg>
+        <SlotId>0</SlotId>
+        <SensorName>hi1336</SensorName>
+        <ModuleId>0x03</ModuleId>
+        <Facing>BACK</Facing>
+        <Orientation>90</Orientation>
+        <Resource_cost>100</Resource_cost>
+        <ConflictingDevice>1</ConflictingDevice>
+        <VCM>
+            <AfName>dw9714p</AfName>
+            <Mode>3</Mode>
+        </VCM>
+        <OTP>
+            <E2prom>
+                <OtpName>hi1336_otp</OtpName>
+                 <I2cAddr>0xa0</I2cAddr>
+                <E2promNum>0</E2promNum>
+                <E2promSize>3445</E2promSize>
+            </E2prom>
+        </OTP>
+        <TuningParameter>
+            <TuningName>hi1336_1876</TuningName>
+        </TuningParameter>
+      </CameraModuleCfg>
+      <CameraModuleCfg>
+        <SlotId>0</SlotId>
+        <SensorName>ov13b10</SensorName>
+        <Facing>BACK</Facing>
+        <Orientation>90</Orientation>
+        <Resource_cost>100</Resource_cost>
+        <ConflictingDevice>1</ConflictingDevice>
+        <VCM>
+            <AfName>dw9718p</AfName>
+            <Mode>0</Mode>
+        </VCM>
+        <OTP>
+            <E2prom>
+                <OtpName>ov13b10_otp</OtpName>
+                 <I2cAddr>0xa0</I2cAddr>
+                <E2promNum>0</E2promNum>
+                <E2promSize>3445</E2promSize>
+            </E2prom>
+        </OTP>
+        <TuningParameter>
+            <TuningName>ov13b10_1893</TuningName>
         </TuningParameter>
       </CameraModuleCfg>
   <!-->
@@ -53,40 +101,49 @@
   <-->
       <CameraModuleCfg>
         <SlotId>1</SlotId>
-        <SensorName>ov8856_front_seasons</SensorName>
+        <SensorName>gc08a3_4lane</SensorName>
         <Facing>FRONT</Facing>
         <Orientation>270</Orientation>
         <Resource_cost>100</Resource_cost>
-        <ConflictingDevice>0</ConflictingDevice>
         <OTP>
             <E2prom>
-                <OtpName>general</OtpName>
-                <I2cAddr>0xa2</I2cAddr>
+                <OtpName>gc08a3_common</OtpName>
+                 <I2cAddr>0x24</I2cAddr>
                 <E2promNum>0</E2promNum>
-                <E2promSize>1934</E2promSize>
+                <E2promSize>1826</E2promSize>
             </E2prom>
         </OTP>
         <TuningParameter>
-            <TuningName>ov8856_front_seasons</TuningName>
+            <TuningName>gc08a3_1829</TuningName>
         </TuningParameter>
       </CameraModuleCfg>
       <CameraModuleCfg>
         <SlotId>1</SlotId>
-        <SensorName>ov8856_front_ly</SensorName>
+        <SensorName>gc08a3_4lane</SensorName>
+        <ModuleId>0x01</ModuleId>
         <Facing>FRONT</Facing>
         <Orientation>270</Orientation>
         <Resource_cost>100</Resource_cost>
-        <ConflictingDevice>0</ConflictingDevice>
         <OTP>
             <E2prom>
-                <OtpName>general</OtpName>
-                <I2cAddr>0xa2</I2cAddr>
+                <OtpName>gc08a3_common</OtpName>
+                 <I2cAddr>0x24</I2cAddr>
                 <E2promNum>0</E2promNum>
-                <E2promSize>1934</E2promSize>
+                <E2promSize>1826</E2promSize>
             </E2prom>
         </OTP>
         <TuningParameter>
-            <TuningName>ov8856_front_ly</TuningName>
+            <TuningName>gc08a3IR_1829</TuningName>
+        </TuningParameter>
+      </CameraModuleCfg>
+      <CameraModuleCfg>
+        <SlotId>1</SlotId>
+        <SensorName>ov8856_4lane</SensorName>
+        <Facing>FRONT</Facing>
+        <Orientation>270</Orientation>
+        <Resource_cost>100</Resource_cost>
+        <TuningParameter>
+            <TuningName>ov8856_1831</TuningName>
         </TuningParameter>
       </CameraModuleCfg>
   <!-->
@@ -94,27 +151,12 @@
   <-->
       <CameraModuleCfg>
         <SlotId>2</SlotId>
-        <SensorName>sp0821_cxt</SensorName>
+        <SensorName>fakeserial</SensorName>
         <Facing>BACK</Facing>
         <Orientation>90</Orientation>
-        <Resource_cost>45</Resource_cost>
-        <SensorRole>dualcam_qvga</SensorRole>
+        <Resource_cost>0</Resource_cost>
         <TuningParameter>
-            <TuningName>default</TuningName>
+            <TuningName>fakeserial</TuningName>
         </TuningParameter>
       </CameraModuleCfg>
-      <CameraModuleCfg>
-        <SlotId>2</SlotId>
-        <SensorName>gc6133c_ly</SensorName>
-        <Facing>BACK</Facing>
-        <Orientation>90</Orientation>
-        <Resource_cost>45</Resource_cost>
-        <SensorRole>dualcam_qvga</SensorRole>
-        <TuningParameter>
-            <TuningName>default</TuningName>
-        </TuningParameter>
-       </CameraModuleCfg>
-
   </root>
-
-

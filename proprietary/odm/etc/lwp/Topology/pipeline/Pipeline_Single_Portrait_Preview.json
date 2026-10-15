@@ -33,11 +33,6 @@
             "type": "LptNode",
             "vendor": "SPRD",
             "id": "prev_Lpt"
-        },
-        {
-            "type": "FilterNode",
-            "vendor": "SPRD",
-            "id": "prev_Filter"
         }
     ],
     "rootNodes": ["SourceNode0","SourceNode1"],
@@ -75,16 +70,6 @@
 		{
             "from": {
                 "name": "prev_FaceBeauty",
-                "port": "out0"
-            },
-            "to": {
-                "name": "prev_Filter",
-                "port": "in0"
-            }
-        },
-        {
-            "from": {
-                "name": "prev_Filter",
                 "port": "out0"
             },
             "to": {

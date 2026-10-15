@@ -22,12 +22,18 @@
                              samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
         </mixPort>
+        <mixPort name="fast" role="source"
+                flags="AUDIO_OUTPUT_FLAG_FAST">
+            <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                     samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
+                     channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+        </mixPort>
         <mixPort name="primary input" role="sink">
             <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK"/>
         </mixPort>
-        <mixPort name="recognition input" role="sink">
+        <mixPort name="recognition input" role="sink" flags="AUDIO_INPUT_FLAG_FAST">
             <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK"/>
@@ -108,19 +114,19 @@
     <!-- route declaration  i.e. list all available sources for a given sink -->
     <routes>
         <route type="mix" sink="Earpiece"
-               sources="primary output,compressed_offload,voip_rx"/>
+               sources="primary output,compressed_offload,fast,voip_rx"/>
         <route type="mix" sink="Speaker"
-               sources="primary output,compressed_offload,voip_rx"/>
+               sources="primary output,compressed_offload,fast,voip_rx"/>
         <route type="mix" sink="Wired Headset"
-               sources="primary output,compressed_offload,voip_rx"/>
+               sources="primary output,compressed_offload,fast,voip_rx"/>
         <route type="mix" sink="Wired Headphones"
-               sources="primary output,compressed_offload,voip_rx"/>
+               sources="primary output,compressed_offload,fast,voip_rx"/>
         <route type="mix" sink="BT SCO"
-               sources="primary output,voip_rx"/>
+               sources="primary output,fast,voip_rx"/>
         <route type="mix" sink="BT SCO Headset"
-               sources="primary output,voip_rx"/>
+               sources="primary output,fast,voip_rx"/>
         <route type="mix" sink="BT SCO Car Kit"
-               sources="primary output,voip_rx"/>
+               sources="primary output,fast,voip_rx"/>
         <route type="mix" sink="primary input"
                sources="Built-In Mic,Wired Headset Mic,BT SCO Headset Mic,USB Device In,USB Headset In,Telephony Rx"/>
         <route type="mix" sink="recognition input"
@@ -128,9 +134,9 @@
         <route type="mix" sink="fm input"
                sources="Fm Record Device"/>
         <route type="mix" sink="USB Device Out"
-               sources="primary output,compressed_offload,voip_rx"/>
+               sources="primary output,compressed_offload,fast,voip_rx"/>
         <route type="mix" sink="USB Headset Out"
-               sources="primary output,compressed_offload,voip_rx"/>
+               sources="primary output,compressed_offload,fast,voip_rx"/>
         <route type="mix" sink="Telephony Tx"
                sources="voice_tx"/>
     </routes>

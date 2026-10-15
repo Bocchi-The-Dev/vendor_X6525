@@ -43,6 +43,11 @@
             "type": "EISNode",
             "vendor": "SPRD",
             "id": "video_EIS"
+        },
+        {
+            "type": "TranAlgoPluginNode",
+            "vendor": "TRAN",
+            "id": "rec_TranAlgoPlugin"
         }
     ],
     "rootNodes": ["SourceNode0","SourceNode2","SourceNode3"],
@@ -103,6 +108,16 @@
                 "port": "out0"
             },
             "to": {
+                "name": "rec_TranAlgoPlugin",
+                "port": "rec_in"
+            }
+        },
+        {
+            "from": {
+                "name": "rec_TranAlgoPlugin",
+                "port": "rec_out"
+            },
+            "to": {
                 "name": "SinkNode",
                 "port": "in0"
             }
@@ -133,8 +148,8 @@
                 "port": "out0"
             },
             "to": {
-                "name": "SinkNode",
-                "port": "in0"
+                "name": "rec_TranAlgoPlugin",
+                "port": "rec_in"
             }
         }
     ]

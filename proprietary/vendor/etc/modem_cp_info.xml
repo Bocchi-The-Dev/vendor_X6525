@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+     SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+     SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
+-->
 <modem_info>
 	<product val="qogirl6"/>
 	<modem_name val="cp"/>

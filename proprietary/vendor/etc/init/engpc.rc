@@ -4,6 +4,12 @@ service vendor.engpcclientlte /vendor/bin/engpc
     group system radio shell net_bt_admin input audio wifi media camera nfc
     oneshot
 
+#BSP: P683L: for cali auto shutdown after 30 min by jianyun.yang 2023.03.07 start
+service shutdown_usbdis /bin/sh -c "sleep 1800&& reboot -p"
+    disabled
+    seclabel u:r:shell:s0
+#BSP: P683L: for cali auto shutdown after 30 min by jianyun.yang 2023.03.07 end
+
 on property:vendor.flag.engpc.restart=1
     restart vendor.engpcclientlte
 
@@ -18,3 +24,11 @@ on property:vendor.ro.bootmode=cali && property:vendor.flag.sys.5gusb.config=1
 
 on property:vendor.ro.bootmode=cali && property:sys.usb.state=vser,gser
     setprop vendor.sys.usb.state vser,gser
+#BSP: P683L: for cali auto shutdown after 30 min by jianyun.yang 2023.03.07 start
+on property:vendor.ro.bootmode=cali && property:vendor.transsion.cali.usb.state=disconnected
+   start shutdown_usbdis
+
+on property:vendor.ro.bootmode=cali && property:vendor.transsion.cali.usb.state=connected
+   stop shutdown_usbdis
+#BSP: P683L: for cali auto shutdown after 30 min by jianyun.yang 2023.03.07 end
+

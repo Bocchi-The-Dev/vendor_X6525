@@ -23,6 +23,16 @@
             "type": "FaceBeautyNode",
             "vendor": "SPRD",
             "id": "video_FaceBeauty"
+        },
+        {
+            "type": "EISNode",
+            "vendor": "SPRD",
+            "id": "video_EIS"
+        },
+        {
+            "type": "TranAlgoPluginNode",
+            "vendor": "TRAN",
+            "id": "rec_TranAlgoPlugin"
         }
     ],
     "rootNodes": ["SourceNode1"],
@@ -53,6 +63,16 @@
                 "port": "out0"
             },
             "to": {
+                "name": "rec_TranAlgoPlugin",
+                "port": "rec_in"
+            }
+        },
+        {
+            "from": {
+                "name": "rec_TranAlgoPlugin",
+                "port": "rec_out"
+            },
+            "to": {
                 "name": "SinkNode",
                 "port": "in0"
             }
@@ -65,6 +85,26 @@
             "to": {
                 "name": "SinkNode",
                 "port": "in0"
+            }
+        },
+        {
+            "from": {
+                "name": "video_ModeRouter",
+                "port": "eis"
+            },
+            "to": {
+                "name": "video_EIS",
+                "port": "in0"
+            }
+        },
+        {
+            "from": {
+                "name": "video_EIS",
+                "port": "out0"
+            },
+            "to": {
+                "name": "rec_TranAlgoPlugin",
+                "port": "rec_in"
             }
         }
     ]

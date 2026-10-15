@@ -25,14 +25,24 @@
             "id": "cap_HDR_router"
         },
         {
-            "type": "ArcYUVNightNode",
+            "type": "MFNR_4Node",
             "vendor": "SPRD",
-            "id": "cap_YUVNight"
+            "id": "cap_MFNR4"
+        },
+        {
+            "type": "MFNRNode",
+            "vendor": "SPRD",
+            "id": "cap_MFNR"
         },
         {
             "type": "HDR4Node",
             "vendor": "SPRD",
             "id": "cap_HDR"
+        },
+        {
+            "type": "HDRNode",
+            "vendor": "SPRD",
+            "id": "cap_HDR2"
         },
         {
             "type": "YNRCNRNode",
@@ -53,11 +63,6 @@
             "type": "JpegNode",
             "vendor": "SPRD",
             "id": "cap_Jpeg"
-        },
-        {
-            "type": "VdBlurless4Node",
-            "vendor": "VD",
-            "id": "cap_VDBlurless"
         }
     ],
     "rootNodes": ["SourceNode0"],
@@ -78,24 +83,34 @@
                 "port": "mfnr"
             },
             "to": {
-                "name": "cap_YUVNight",
+                "name": "cap_MFNR",
                 "port": "in0"
             }
         },
         {
             "from": {
-                "name": "cap_MF_router",
-                "port": "vdblurless"
+                "name": "cap_MFNR",
+                "port": "out0"
             },
             "to": {
-                "name": "cap_VDBlurless",
+                "name": "cap_HDR_router",
                 "port": "in0"
             }
         },
         {
             "from": {
-                "name": "cap_VDBlurless",
+                "name": "cap_HDR_router",
                 "port": "out0"
+            },
+            "to": {
+                "name": "cap_HDR2",
+                "port": "in0"
+            }
+        },
+        {
+            "from": {
+                "name": "cap_HDR_router",
+                "port": "out1"
             },
             "to": {
                 "name": "cap_YNRCNR",
@@ -104,18 +119,8 @@
         },
         {
             "from": {
-                "name": "cap_YUVNight",
+                "name": "cap_HDR2",
                 "port": "out0"
-            },
-            "to": {
-                "name": "cap_YNRCNR",
-                "port": "in0"
-            }
-        },
-        {
-            "from": {
-                "name": "cap_MF_router",
-                "port": "single"
             },
             "to": {
                 "name": "cap_YNRCNR",

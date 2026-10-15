@@ -30,9 +30,19 @@
             "id": "cap_MFNR4"
         },
         {
+            "type": "MFNRNode",
+            "vendor": "SPRD",
+            "id": "cap_MFNR"
+        },
+        {
             "type": "HDR4Node",
             "vendor": "SPRD",
             "id": "cap_HDR"
+        },
+        {
+            "type": "HDRNode",
+            "vendor": "SPRD",
+            "id": "cap_HDR2"
         },
         {
             "type": "YNRCNRNode",
@@ -73,13 +83,13 @@
                 "port": "mfnr"
             },
             "to": {
-                "name": "cap_MFNR4",
+                "name": "cap_MFNR",
                 "port": "in0"
             }
         },
         {
             "from": {
-                "name": "cap_MFNR4",
+                "name": "cap_MFNR",
                 "port": "out0"
             },
             "to": {
@@ -93,7 +103,7 @@
                 "port": "out0"
             },
             "to": {
-                "name": "cap_HDR",
+                "name": "cap_HDR2",
                 "port": "in0"
             }
         },
@@ -109,7 +119,7 @@
         },
         {
             "from": {
-                "name": "cap_HDR",
+                "name": "cap_HDR2",
                 "port": "out0"
             },
             "to": {

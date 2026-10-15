@@ -45,19 +45,19 @@
             "id": "cap_MFNR4"
         },
         {
-            "type": "ArcHDRNode",
+            "type": "MFNRNode",
+            "vendor": "SPRD",
+            "id": "cap_MFNR"
+        },
+        {
+            "type": "HDR4Node",
             "vendor": "SPRD",
             "id": "cap_HDR"
         },
         {
-            "type": "VdBlurless4Node",
-            "vendor": "VD",
-            "id": "cap_VDBlurless"
-        },
-        {
-            "type": "FilterCapNode",
+            "type": "HDRNode",
             "vendor": "SPRD",
-            "id": "cap_Filter"
+            "id": "cap_HDR2"
         }
     ],
     "rootNodes": ["SourceNode0","SourceNode2"],
@@ -95,16 +95,16 @@
         {
             "from": {
                 "name": "cap_MF_router",
-                "port": "hdr"
+                "port": "hdr2"
             },
             "to": {
-                "name": "cap_HDR",
+                "name": "cap_HDR2",
                 "port": "in0"
             }
         },
         {
             "from": {
-                "name": "cap_HDR",
+                "name": "cap_HDR2",
                 "port": "out0"
             },
             "to": {
@@ -115,16 +115,16 @@
 		{
             "from": {
                 "name": "cap_MF_router",
-                "port": "vdblurless"
+                "port": "mfnr"
             },
             "to": {
-                "name": "cap_VDBlurless",
+                "name": "cap_MFNR",
                 "port": "in0"
             }
         },
 		{
             "from": {
-                "name": "cap_VDBlurless",
+                "name": "cap_MFNR",
                 "port": "out0"
             },
             "to": {
@@ -145,16 +145,6 @@
         {
             "from": {
                 "name": "cap_FaceBeauty",
-                "port": "out0"
-            },
-            "to": {
-                "name": "cap_Filter",
-                "port": "in0"
-            }
-        },
-        {
-            "from": {
-                "name": "cap_Filter",
                 "port": "out0"
             },
             "to": {

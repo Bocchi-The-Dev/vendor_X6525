@@ -5,18 +5,9 @@ on charger-fs
     chown system system /mnt/vendor
     chmod 0771 /mnt/vendor
     chmod 664 /sys/power/wakeup_count
-    chown system system /sys/class/oplus_chg/battery/lcd_mode
-    chmod 0664 /sys/class/oplus_chg/battery/lcd_mode
-
-on charger-apexd
-    # Make sure that apexd is started in the default namespace
-    enter_default_mount_ns
-
-    start apexd
-
-    # Wait for apexd to finish activating APEXes before starting more processes.
-    wait_for_prop apexd.status activated
-    perform_apex_config
+    chown system system /sys/devices/platform/chg_dv2/dv2_poweroff_complete
+    chmod 0660 /sys/devices/platform/chg_dv2/dv2_poweroff_complete
+    write /sys/devices/platform/chg_dv2/dv2_poweroff_complete 1
 
 on property:ro.debuggable=1
     start console

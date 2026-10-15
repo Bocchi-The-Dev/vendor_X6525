@@ -30,9 +30,19 @@
             "id": "cap_MFNR4"
         },
         {
-            "type": "ArcHDRNode",
+            "type": "MFNRNode",
+            "vendor": "SPRD",
+            "id": "cap_MFNR"
+        },
+        {
+            "type": "HDR4Node",
             "vendor": "SPRD",
             "id": "cap_HDR"
+        },
+        {
+            "type": "HDRNode",
+            "vendor": "SPRD",
+            "id": "cap_HDR2"
         },
         {
             "type": "YNRCNRNode",
@@ -63,16 +73,6 @@
             "type": "LptNode",
             "vendor": "SPRD",
             "id": "cap_Lpt"
-        },
-        {
-            "type": "VdBlurless4Node",
-            "vendor": "VD",
-            "id": "cap_VDBlurless"
-        },
-        {
-            "type": "FilterCapNode",
-            "vendor": "SPRD",
-            "id": "cap_Filter"
         }
     ],
     "rootNodes": ["SourceNode0","SourceNode1"],
@@ -113,13 +113,13 @@
                 "port": "hdr"
             },
             "to": {
-                "name": "cap_HDR",
+                "name": "cap_HDR2",
                 "port": "in0"
             }
         },
         {
             "from": {
-                "name": "cap_HDR",
+                "name": "cap_HDR2",
                 "port": "out0"
             },
             "to": {
@@ -130,16 +130,16 @@
 		{
             "from": {
                 "name": "cap_MF_router",
-                "port": "vdblurless"
+                "port": "mfnr"
             },
             "to": {
-                "name": "cap_VDBlurless",
+                "name": "cap_MFNR",
                 "port": "in0"
             }
         },
 		{
             "from": {
-                "name": "cap_VDBlurless",
+                "name": "cap_MFNR",
                 "port": "out0"
             },
             "to": {
@@ -170,16 +170,6 @@
 		{
             "from": {
                 "name": "cap_FaceBeauty",
-                "port": "out0"
-            },
-            "to": {
-                "name": "cap_Filter",
-                "port": "in0"
-            }
-        },
-        {
-            "from": {
-                "name": "cap_Filter",
                 "port": "out0"
             },
             "to": {

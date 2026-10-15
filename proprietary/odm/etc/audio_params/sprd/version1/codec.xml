@@ -1,4 +1,8 @@
 <codec time="2022-08-18 11:13:36" num_mode="0x38" struct_size="0x150">
+<!--
+     SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+     SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
+-->
     <Audio>
         <Handset>
             <NB1 mode="0">

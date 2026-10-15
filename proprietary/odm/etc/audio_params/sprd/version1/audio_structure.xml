@@ -1,4 +1,8 @@
 <audio_structure set="Audio Structure Profile Select" upload="Audio Structure Profile Update" time="2022-08-18 13:48:51" num_mode="0x4a" struct_size="0x2da">
+<!--
+     SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+     SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
+-->
     <Audio>
         <Handset>
             <NB1 mode="0">

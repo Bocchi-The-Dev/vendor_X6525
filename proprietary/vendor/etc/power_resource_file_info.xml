@@ -33,6 +33,24 @@
         <attr name="set_func"     value="common_set" />
         <attr name="clear_func"   value="common_clear" />
     </file>
+   <!-- add for define gpu boost resource  by ke.you at 20230823  start -->
+    <file path="/sys/class/devfreq/23100000.gpu" file="min_freq" name="gpu_freq_min" >
+        <attr name="comp_func"    value="common_comp_ascend_order" />
+        <attr name="set_func"     value="common_set" />
+        <attr name="clear_func"   value="common_clear" />
+    </file>
+    <file path="/sys/class/devfreq/23100000.gpu" file="max_freq" name="gpu_freq_max" >
+        <attr name="comp_func"    value="common_comp_ascend_order" />
+        <attr name="set_func"     value="common_set" />
+        <attr name="clear_func"   value="common_clear" />
+    </file>
+    <file path="/sys/class/devfreq/23100000.gpu" file="governor" name="gpu_governor" >
+        <attr name="comp_func"    value="common_comp_ascend_order" />
+        <attr name="set_func"     value="common_set" />
+        <attr name="clear_func"   value="common_clear" />
+    </file>
+   <!-- add for define gpu freq  by ke.you at 20230823  end -->
+
     <file path="/sys/devices/system/cpu/cpufreq/policy6" file="scaling_max_freq" name="cluster1_freq_max" >
         <attr name="comp_func"    value="common_comp_ascend_order" />
         <attr name="set_func"     value="common_set" />
@@ -84,36 +102,16 @@
         <attr name="set_func"     value="common_set" />
         <attr name="clear_func"   value="common_clear" />
     </file>
-    <file path="/proc/sys/vm" file="swappiness" >
+    <file path="/sys/devices/system/cpu/cpufreq/policy0/schedutil/" file="rate_limit_us" name="cluster0_rate_limit_us" >
         <attr name="comp_func"    value="common_comp_ascend_order" />
         <attr name="set_func"     value="common_set" />
         <attr name="clear_func"   value="common_clear" />
     </file>
-	<file path="/proc/sys/vm" file="dirty_background_ratio" >
+    <file path="/sys/devices/system/cpu/cpufreq/policy6/schedutil/" file="rate_limit_us" name="cluster1_rate_limit_us" >
         <attr name="comp_func"    value="common_comp_ascend_order" />
         <attr name="set_func"     value="common_set" />
         <attr name="clear_func"   value="common_clear" />
     </file>
-    <file path="/proc/sys/vm" file="dirty_expire_centisecs" >
-        <attr name="comp_func"    value="common_comp_ascend_order" />
-        <attr name="set_func"     value="common_set" />
-        <attr name="clear_func"   value="common_clear" />
-    </file>
-    <file path="/proc/sys/vm" file="dirty_writeback_centisecs" >
-        <attr name="comp_func"    value="common_comp_ascend_order" />
-        <attr name="set_func"     value="common_set" />
-        <attr name="clear_func"   value="common_clear" />
-    </file>
-    <file path="/sys/block/mmcblk0/queue" file="read_ahead_kb" >
-        <attr name="comp_func"    value="common_comp_ascend_order" />
-        <attr name="set_func"     value="common_set" />
-        <attr name="clear_func"   value="common_clear" />
-    </file>
-    <file path="/sys/block/mmcblk0/queue/iosched" file="read_expire" >
-        <attr name="comp_func"    value="common_comp_ascend_order" />
-        <attr name="set_func"     value="common_set" />
-        <attr name="clear_func"   value="common_clear" />
-   </file>
     <file path="subsys" file="uclamp" name="uclamp" >
         <attr name="comp_func"    value="common_subsys_comp" />
         <attr name="set_func"     value="common_subsys_set" />
@@ -164,29 +162,23 @@
         <inode path="/dev/cpuctl/top-app" file="cpu.uclamp.latency_sensitive" name="top-app_latency_sensitive" />
         <inode path="/dev/cpuctl/top-app" file="cpu.uclamp.min" name="top-app_min" />
         <inode path="/dev/cpuctl/top-app" file="cpu.uclamp.max" name="top-app_max" />
+	<inode path="/dev/cpuctl/top-app" file="cpu.shares" name="top-app_cpu_shares" />
         <inode path="/dev/cpuctl/foreground" file="cpu.uclamp.latency_sensitive" name="foreground_latency_sensitive" />
         <inode path="/dev/cpuctl/foreground" file="cpu.uclamp.min" name="foreground_min" />
         <inode path="/dev/cpuctl/foreground" file="cpu.uclamp.max" name="foreground_max" />
+	<inode path="/dev/cpuctl/foreground" file="cpu.shares" name="foreground_cpu_shares" />
         <inode path="/dev/cpuctl/background" file="cpu.uclamp.latency_sensitive" name="background_latency_sensitive" />
         <inode path="/dev/cpuctl/background" file="cpu.uclamp.min" name="background_min" />
         <inode path="/dev/cpuctl/background" file="cpu.uclamp.max" name="background_max" />
         <inode path="/dev/cpuctl/system" file="cpu.uclamp.latency_sensitive" name="system_latency_sensitive" />
         <inode path="/dev/cpuctl/system" file="cpu.uclamp.min" name="system_min" />
         <inode path="/dev/cpuctl/system" file="cpu.uclamp.max" name="system_max" />
-        <inode path="/dev/cpuctl/system" file="cpu.shares" name="system_cpu_shares" />
         <inode path="/dev/cpuctl/system-background" file="cpu.uclamp.latency_sensitive" name="system-background_latency_sensitive" />
         <inode path="/dev/cpuctl/system-background" file="cpu.uclamp.min" name="system-background_min" />
         <inode path="/dev/cpuctl/system-background" file="cpu.uclamp.max" name="system-background_max" />
-        <inode path="/dev/cpuctl/system-background" file="cpu.shares" name="sys_background_cpu_shares" />
-        <inode path="/dev/cpuctl/camera-daemon" file="cpu.uclamp.latency_sensitive" name="camera-daemon_latency_sensitive" />
-        <inode path="/dev/cpuctl/camera-daemon" file="cpu.uclamp.min" name="camera-daemon_min" />
-        <inode path="/dev/cpuctl/camera-daemon" file="cpu.uclamp.max" name="camera-daemon_max" />
-        <inode path="/dev/cpuctl/top-app" file="cpu.shares" name="top-app_cpu_shares" />
-        <inode path="/dev/cpuctl/foreground" file="cpu.shares" name="foreground_cpu_shares" />
-        <inode path="/dev/cpuctl/background" file="cpu.shares" name="background_cpu_shares" />
+	<inode path="/dev/cpuctl/camera-daemon" file="cpu.shares" name="camera-daemon_cpu_shares" />
         <conf name="conf_2" >
             <set path="/dev/cpuctl/top-app" file="cpu.uclamp.min" value="30" />
-            <set path="/dev/cpuctl/top-app" file="cpu.uclamp.max" value="50" />
         </conf>
         <conf name="conf_1" >
         </conf>
@@ -194,19 +186,15 @@
             <set path="/dev/cpuctl/top-app" file="cpu.uclamp.min" value="35"/>
         </conf>
         <conf name="conf_4">
-            <set path="/dev/cpuctl/top-app" file="cpu.shares" value="5120"/>
-            <set path="/dev/cpuctl/foreground" file="cpu.shares" value="5120"/>
-            <set path="/dev/cpuctl/background" file="cpu.shares" value="512"/>
-            <set path="/dev/cpuctl/top-app" file="cpu.uclamp.min" value="50"/>
+            <set path="/dev/cpuctl/camera-daemon" file="cpu.shares" value="10240" />
+            <set path="/dev/cpuctl/top-app" file="cpu.shares" value="8192" />
+            <set path="/dev/cpuctl/foreground" file="cpu.shares" value="8192" />
         </conf>
-        <conf name="conf_5" >
-            <set path="/dev/cpuctl/top-app" file="cpu.uclamp.min" value="30" />
-        </conf>
-        <conf name="conf_8" >
-            <set path="/dev/cpuctl/background" file="cpu.shares" value="512"/>
-            <set path="/dev/cpuctl/camera-daemon" file="cpu.shares" value="5120"/>
-            <set path="/dev/cpuctl/system-background" file="cpu.shares" value="512"/>
-            <set path="/dev/cpuctl/system" file="cpu.shares" value="768"/>
-        </conf>
+        <!-- add for launch opt by ke.you at 20220721  start -->
+        <conf name="conf_launch" >
+                <set path="/dev/cpuctl/top-app" file="cpu.uclamp.min" value="60" />
+                <set path="/dev/cpuctl/top-app" file="cpu.uclamp.max" value="100" />
+            </conf>
+        <!-- add for launch opt by ke.you at 20220721  end -->
     </subsys>
 </resources>

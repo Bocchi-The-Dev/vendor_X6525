@@ -45,14 +45,19 @@
             "id": "cap_MFNR4"
         },
         {
-            "type": "ArcHDRNode",
+            "type": "MFNRNode",
+            "vendor": "SPRD",
+            "id": "cap_MFNR"
+        },
+        {
+            "type": "HDR4Node",
             "vendor": "SPRD",
             "id": "cap_HDR"
         },
         {
-            "type": "ArcCHDRNode",
+            "type": "HDRNode",
             "vendor": "SPRD",
-            "id": "cap_CHDR"
+            "id": "cap_HDR2"
         },
         {
             "type": "YNRCNRNode",
@@ -95,26 +100,20 @@
             "id": "cap_Filter"
         },
         {
-            "type": "PolarrRenderNode",
-            "vendor": "SPRD",
-            "id": "cap_FilterPolarr"
-        },
-        {
             "type": "JpegNode",
             "vendor": "SPRD",
             "id": "cap_Jpeg"
         },
         {
-            "type": "VdBlurless4Node",
-            "vendor": "VD",
-            "id": "cap_VDBlurless"
+            "type": "TranAlgoPluginNode",
+            "vendor": "TRAN",
+            "id": "cap_TranAlgoPlugin"
         },
         {
-            "type": "VdSuperphotoNode",
-            "vendor": "VD",
-            "id": "cap_VDSuperphoto"
+            "type": "TranAlgoPluginNode",
+            "vendor": "TRAN",
+            "id": "cap_mf_TranAlgoPlugin"
         }
-
     ],
     "rootNodes": ["SourceNode0", "SourceNode2", "SourceNode3"],
     "linkages": [
@@ -171,7 +170,47 @@
         {
             "from": {
                 "name": "cap_MF_router",
+                "port": "tranMultiFrame"
+            },
+            "to": {
+                "name": "cap_mf_TranAlgoPlugin",
+                "port": "multi_cap_in"
+            }
+        },
+        {
+            "from": {
+                "name": "cap_mf_TranAlgoPlugin",
+                "port": "multi_cap_out"
+            },
+            "to": {
+                "name": "cap_YNRCNR",
+                "port": "in0"
+            }
+        },
+        {
+            "from": {
+                "name": "cap_MF_router",
                 "port": "single"
+            },
+            "to": {
+                "name": "cap_YNRCNR",
+                "port": "in0"
+            }
+        },
+        {
+            "from": {
+                "name": "cap_MF_router",
+                "port": "hdr2"
+            },
+            "to": {
+                "name": "cap_HDR2",
+                "port": "in0"
+            }
+        },
+        {
+            "from": {
+                "name": "cap_HDR2",
+                "port": "out0"
             },
             "to": {
                 "name": "cap_YNRCNR",
@@ -201,47 +240,17 @@
         {
             "from": {
                 "name": "cap_MF_router",
-                "port": "vdblurless"
+                "port": "mfnr"
             },
             "to": {
-                "name": "cap_VDBlurless",
+                "name": "cap_MFNR",
                 "port": "in0"
             }
         },
         {
             "from": {
-                "name": "cap_VDBlurless",
+                "name": "cap_MFNR",
                 "port": "out0"
-            },
-            "to": {
-                "name": "cap_HDR_router",
-                "port": "in0"
-            }
-        },
-        {
-            "from": {
-                "name": "cap_HDR_router",
-                "port": "out0"
-            },
-            "to": {
-                "name": "cap_CHDR",
-                "port": "in0"
-            }
-        },
-        {
-            "from": {
-                "name": "cap_CHDR",
-                "port": "out0"
-            },
-            "to": {
-                "name": "cap_YNRCNR",
-                "port": "in0"
-            }
-        },
-        {
-            "from": {
-                "name": "cap_HDR_router",
-                "port": "out1"
             },
             "to": {
                 "name": "cap_YNRCNR",
@@ -254,18 +263,8 @@
                 "port": "mfsr"
             },
             "to": {
-                "name": "cap_VDSuperphoto",
-                "port": "in0"
-            }
-        },
-        {
-            "from": {
-                "name": "cap_VDSuperphoto",
-                "port": "out0"
-            },
-            "to": {
-                "name": "cap_YNRCNR",
-                "port": "in0"
+                "name": "cap_MFSR",
+                "port": "mfsr_in"
             }
         },
         {
@@ -334,13 +333,23 @@
                 "port": "out0"
             },
             "to": {
-                "name": "cap_FilterPolarr",
+                "name": "cap_TranAlgoPlugin",
+                "port": "cap_in"
+            }
+        },
+        {
+            "from": {
+                "name": "cap_TranAlgoPlugin",
+                "port": "cap_out"
+            },
+            "to": {
+                "name": "cap_Filter",
                 "port": "in0"
             }
         },
         {
             "from": {
-                "name": "cap_FilterPolarr",
+                "name": "cap_Filter",
                 "port": "out0"
             },
             "to": {

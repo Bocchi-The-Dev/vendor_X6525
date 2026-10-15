@@ -25,19 +25,9 @@
             "id": "SinkNode"
         },
         {
-            "type": "DeWarpingNode",
-            "vendor": "SPRD",
-            "id": "prev_DeWarping"
-        },
-        {
             "type": "ModeRouterNode",
             "vendor": "SPRD",
             "id": "prev_ModeRouter"
-        },
-        {
-            "type": "FaceBeautyNode",
-            "vendor": "SPRD",
-            "id": "prev_FaceBeauty"
         },
         {
             "type": "AISceneNode",
@@ -45,14 +35,14 @@
             "id": "prev_AIScene"
         },
         {
-            "type": "FilterNode",
-            "vendor": "SPRD",
-            "id": "prev_Filter"
-        },
-        {
             "type": "EISNode",
             "vendor": "SPRD",
             "id": "prev_EIS"
+        },
+        {
+            "type": "TranAlgoPluginNode",
+            "vendor": "TRAN",
+            "id": "prev_TranAlgoPlugin"
         }
     ],
     "rootNodes": ["SourceNode0","SourceNode2","SourceNode3"],
@@ -83,16 +73,6 @@
                 "port": "result_out"
             },
             "to": {
-                "name": "prev_DeWarping",
-                "port": "in0"
-            }
-        },
-        {
-            "from": {
-                "name": "prev_DeWarping",
-                "port": "out0"
-            },
-            "to": {
                 "name": "prev_ModeRouter",
                 "port": "in0"
             }
@@ -103,14 +83,14 @@
                 "port": "normal"
             },
             "to": {
-                "name": "prev_FaceBeauty",
-                "port": "in0"
+                "name": "prev_TranAlgoPlugin",
+                "port": "pre_in"
             }
         },
-        {
+	{
             "from": {
-                "name": "prev_FaceBeauty",
-                "port": "out0"
+                "name": "prev_TranAlgoPlugin",
+                "port": "pre_out"
             },
             "to": {
                 "name": "prev_AIScene",
@@ -127,7 +107,7 @@
                 "port": "in0"
             }
         },
-        {
+	{
             "from": {
                 "name": "prev_ModeRouter",
                 "port": "filter"
@@ -153,8 +133,8 @@
                 "port": "out0"
             },
             "to": {
-                "name": "SinkNode",
-                "port": "in0"
+                "name": "prev_TranAlgoPlugin",
+                "port": "pre_in"
             }
         }
     ]

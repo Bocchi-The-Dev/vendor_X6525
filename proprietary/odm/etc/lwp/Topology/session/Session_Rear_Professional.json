@@ -23,7 +23,8 @@
         "pipeline": [
             "Pipeline_Rear_Professional_Capture",
             "Pipeline_Multimode_Preview",
-            "Pipeline_Async"
+            "Pipeline_Async",
+            "Pipeline_Rear_Auto_Callback"
         ]
     }
 }

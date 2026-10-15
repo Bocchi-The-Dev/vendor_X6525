@@ -20,19 +20,19 @@
             "id": "prev_ModeRouter"
         },
         {
-            "type": "FaceBeautyNode",
-            "vendor": "SPRD",
-            "id": "prev_FaceBeauty"
-        },
-        {
             "type": "AISceneNode",
             "vendor": "SPRD",
             "id": "prev_AIScene"
         },
         {
-            "type": "FilterNode",
+            "type": "EISNode",
             "vendor": "SPRD",
-            "id": "prev_Filter"
+            "id": "prev_EIS"
+        },
+        {
+            "type": "TranAlgoPluginNode",
+            "vendor": "TRAN",
+            "id": "prev_TranAlgoPlugin"
         }
     ],
     "rootNodes": ["SourceNode1"],
@@ -53,7 +53,7 @@
                 "port": "normal"
             },
             "to": {
-                "name": "prev_FaceBeauty",
+                "name": "prev_AIScene",
                 "port": "in0"
             }
         },
@@ -69,11 +69,21 @@
         },
         {
             "from": {
-                "name": "prev_FaceBeauty",
+                "name": "prev_ModeRouter",
+                "port": "eis"
+            },
+            "to": {
+                "name": "prev_EIS",
+                "port": "in0"
+            }
+        },
+        {
+            "from": {
+                "name": "prev_EIS",
                 "port": "out0"
             },
             "to": {
-                "name": "prev_AIScene",
+                "name": "SinkNode",
                 "port": "in0"
             }
         },
@@ -81,6 +91,16 @@
             "from": {
                 "name": "prev_AIScene",
                 "port": "out0"
+            },
+            "to": {
+                "name": "prev_TranAlgoPlugin",
+                "port": "pre_in"
+            }
+        },
+        {
+            "from": {
+                "name": "prev_TranAlgoPlugin",
+                "port": "pre_out"
             },
             "to": {
                 "name": "SinkNode",

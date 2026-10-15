@@ -5,10 +5,6 @@
 soong_namespace {
 }
 
-// =============================================
-// VENDOR APPS
-// =============================================
-
 android_app_import {
     name: "LogManager",
     owner: "infinix",
@@ -42,10 +38,6 @@ android_app_import {
     soc_specific: true,
 }
 
-// =============================================
-// SYSTEM_EXT APPS
-// =============================================
-
 android_app_import {
     name: "SoterService",
     owner: "infinix",
@@ -68,13 +60,6 @@ android_app_import {
     system_ext_specific: true,
 }
 
-
-
-// =============================================
-// UNISOC TELEPHONY APPS - UPDATED WITH CORRECT DEPENDENCIES
-// =============================================
-
-
 android_app_import {
     name: "TelephonyProvider-unisoc",
     owner: "infinix",
@@ -85,10 +70,6 @@ android_app_import {
     },
     privileged: true,
 }
-
-// =============================================
-// SYSTEM_EXT PRIVILEGED APPS
-// =============================================
 
 android_app_import {
     name: "ims",
@@ -162,7 +143,6 @@ android_app_import {
     system_ext_specific: true,
 }
 
-// Unisoc Telephony Services
 android_app_import {
     name: "radio_interactor_service",
     owner: "infinix",
@@ -188,7 +168,6 @@ android_app_import {
     
 }
 
-// System Providers
 android_app_import {
     name: "SprdContactsProvider",
     owner: "infinix",
@@ -225,7 +204,6 @@ android_app_import {
     system_ext_specific: true,
 }
 
-// System UI & Settings
 android_app_import {
     name: "Settings",
     owner: "infinix",
@@ -262,7 +240,6 @@ android_app_import {
     system_ext_specific: true,
 }
 
-// Launcher & QuickStep
 android_app_import {
     name: "SearchLauncherQuickStep",
     owner: "infinix",
@@ -287,7 +264,6 @@ android_app_import {
     system_ext_specific: true,
 }
 
-// Power & Utilities
 android_app_import {
     name: "PowerSaveModeLauncherPrebuilt",
     owner: "infinix",
@@ -300,7 +276,6 @@ android_app_import {
     system_ext_specific: true,
 }
 
-// Wallet & Payments
 android_app_import {
     name: "QuickAccessWallet",
     owner: "infinix",
@@ -313,7 +288,6 @@ android_app_import {
     system_ext_specific: true,
 }
 
-// Unisoc WiFi
 android_app_import {
     name: "UniWifiDialog",
     owner: "infinix",
@@ -338,7 +312,6 @@ android_app_import {
     system_ext_specific: true,
 }
 
-// Realme Apps
 android_app_import {
     name: "AppHub",
     owner: "infinix",
@@ -363,7 +336,6 @@ android_app_import {
     system_ext_specific: true,
 }
 
-// System Services
 android_app_import {
     name: "Srmi",
     owner: "infinix",
@@ -388,10 +360,6 @@ android_app_import {
     system_ext_specific: true,
 }
 
-// =============================================
-// OVERLAYS
-// =============================================
-
 android_app_import {
     name: "AospWifiOverlay_Marlin3",
     owner: "infinix",
@@ -414,11 +382,6 @@ android_app_import {
     product_specific: true,
 }
 
-
-// =============================================
-// FRAMEWORK RESOURCES
-// =============================================
-
 android_app_import {
     name: "unisoc-res",
     owner: "infinix",
@@ -431,11 +394,6 @@ android_app_import {
     system_ext_specific: true,
 }
 
-// =============================================
-// UNISOC PERMISSIONS - DUAL LOCATION
-// =============================================
-
-// System permissions (primary)
 prebuilt_etc {
     name: "com.unisoc.xml",
     src: "proprietary/system_ext/etc/permissions/com.unisoc.xml",
@@ -454,7 +412,6 @@ prebuilt_etc {
     sub_dir: "permissions",
 }
 
-// System_ext permissions (fallback)
 prebuilt_etc {
     name: "com.unisoc.xml-system_ext",
     src: "proprietary/system_ext/etc/permissions/com.unisoc.xml",
@@ -476,10 +433,6 @@ prebuilt_etc {
     system_ext_specific: true,
 }
 
-// =============================================
-// EXISTING FRAMEWORK IMPORTS
-// =============================================
-
 prebuilt_etc_xml {
     name: "android.hardware.gatekeeper@1.0-service.trusty",
     owner: "infinix",
@@ -499,18 +452,6 @@ prebuilt_etc_xml {
 }
 
 dex_import {
-    name: "androidx.camera.extensions.impl",
-    owner: "infinix",
-    jars: ["proprietary/vendor/framework/androidx.camera.extensions.impl.jar"],
-    soc_specific: true,
-}
-
-// =============================================
-// UNISOC FRAMEWORK JARS - WITH PROPER OWNER
-// =============================================
-
-// System framework jars (in /system/framework/)
-dex_import {
     name: "radio_interactor_common",
     jars: ["proprietary/system/framework/radio_interactor_common.jar"],
     owner: "infinix",
@@ -518,31 +459,12 @@ dex_import {
 
 }
 
-// dex_import {
-//     name: " ", 
-//     jars: ["proprietary/system/framework/unisoc_ims_common.jar"],
-//     owner: "infinix",
-//     soc_specific: true,
-//     dex_preopt: {
-//         enabled: false, 
-//     },
-
-// }
-// 
 dex_import {
     name: "unisoc-services",
     jars: ["proprietary/system/framework/unisoc-services.jar"],
     owner: "infinix",
     soc_specific: true,
 }
-
-// System_ext framework jars (in /system_ext/framework/)
-// dex_import {
-//    name: "unisoc-framework",
-//    jars: ["proprietary/system_ext/framework/unisoc-framework.jar"],
-//    owner: "infinix",
-//    soc_specific: true,
-//}
 
 dex_import {
     name: "com.unisoc.sdk.common",
@@ -557,11 +479,6 @@ dex_import {
     owner: "infinix",
     soc_specific: true,
 }
-
-
-// =============================================
-// VINTF MANIFESTS (existing entries)
-// =============================================
 
 prebuilt_etc_xml {
     name: "ai_engine-default",
@@ -585,15 +502,6 @@ prebuilt_etc_xml {
     name: "android.hardware.sensors-multihal",
     owner: "infinix",
     src: "proprietary/vendor/etc/vintf/manifest/android.hardware.sensors-multihal.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "android.hardware.thermal@2.0-service",
-    owner: "infinix",
-    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.thermal@2.0-service.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
@@ -672,24 +580,6 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "hdcp-default",
-    owner: "infinix",
-    src: "proprietary/vendor/etc/vintf/manifest/hdcp-default.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "lights",
-    owner: "infinix",
-    src: "proprietary/vendor/etc/vintf/manifest/lights.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
     name: "manifest_android.hardware.drm-service.widevine",
     owner: "infinix",
     src: "proprietary/vendor/etc/vintf/manifest/manifest_android.hardware.drm-service.widevine.xml",
@@ -717,45 +607,9 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "manifest_oplus_performance",
-    owner: "infinix",
-    src: "proprietary/vendor/etc/vintf/manifest/manifest_oplus_performance.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "memtrack",
-    owner: "infinix",
-    src: "proprietary/vendor/etc/vintf/manifest/memtrack.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
     name: "network-default",
     owner: "infinix",
     src: "proprietary/vendor/etc/vintf/manifest/network-default.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-// prebuilt_etc_xml {
-//    name: "power.stats-default",
-//    owner: "infinix",
-//    src: "proprietary/vendor/etc/vintf/manifest/power.stats-default.xml",
-//    filename_from_src: true,
-//    sub_dir: "vintf/manifest",
-//    soc_specific: true,
-// }
-
-prebuilt_etc_xml {
-    name: "rebootescrow-default",
-    owner: "infinix",
-    src: "proprietary/vendor/etc/vintf/manifest/rebootescrow-default.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
@@ -774,15 +628,6 @@ prebuilt_etc_xml {
     name: "trusty-default",
     owner: "infinix",
     src: "proprietary/vendor/etc/vintf/manifest/trusty-default.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "tui-default",
-    owner: "infinix",
-    src: "proprietary/vendor/etc/vintf/manifest/tui-default.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
@@ -834,36 +679,9 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "vendor.sprd.hardware.commondcs@1.0-service",
-    owner: "infinix",
-    src: "proprietary/vendor/etc/vintf/manifest/vendor.sprd.hardware.commondcs@1.0-service.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
     name: "vendor.sprd.hardware.gnss@2.2-service",
     owner: "infinix",
     src: "proprietary/vendor/etc/vintf/manifest/vendor.sprd.hardware.gnss@2.2-service.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "vendor.sprd.hardware.thermal@2.0-service",
-    owner: "infinix",
-    src: "proprietary/vendor/etc/vintf/manifest/vendor.sprd.hardware.thermal@2.0-service.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "vibrator",
-    owner: "infinix",
-    src: "proprietary/vendor/etc/vintf/manifest/vibrator.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
@@ -877,10 +695,6 @@ prebuilt_etc_xml {
     sub_dir: "vintf/manifest",
     device_specific: true,
 }
-
-// =============================================
-// BOOT HAL (A/B UPDATES)
-// =============================================
 
 cc_prebuilt_binary {
     name: "vendor.sprd.hardware.boot@1.2-service",
@@ -896,13 +710,6 @@ cc_prebuilt_binary {
     check_elf_files: false,
 }
 
-// =============================================
-// IMS TEST
-// =============================================
-
-
-
-// IMS Service Entitlement APK
 android_app_import {
     name: "ImsServiceEntitlement",
     apk: "proprietary/product/priv-app/ImsServiceEntitlement/ImsServiceEntitlement.apk",
@@ -914,75 +721,184 @@ android_app_import {
     product_specific: true,
 }
 
-// dex_import {
-//     name: "unisoc-ims-common",
-//     installable: true,
-//     prefer: true,
-//     jars: ["proprietary/system/framework/unisoc_ims_common.jar"],
-//     visibility: ["//vendor/infinix/X6525"],
-//     apex_available: ["//apex_available:platform"],
-    
-//     // Optional: If you have dex profiles
-//     //profile: "proprietary/system/framework/boot-unisoc_ims_common.vdex",
-// }
+// =============================================
+// STOCK X6525 ADDITIONS
+// =============================================
 
-// dex_import {
-//     name: "radio-interactor-common",
-//     installable: true,
-//     prefer: true,
-//     jars: ["proprietary/system/framework/radio_interactor_common.jar"],
-//     visibility: ["//vendor/infinix/X6525"],
-//     apex_available: ["//apex_available:platform"],
-// }
+prebuilt_etc_xml {
+    name: "android.hardware.biometrics.fingerprint@2.1-service",
+    owner: "infinix",
+    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.biometrics.fingerprint@2.1-service.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
 
 
-// For unisoc-framework (system_ext)
-// java_import {
-//    name: "unisoc-framework",
-//    installable: true,
-//    prefer: true,
-//    jars: ["proprietary/system_ext/framework/unisoc-framework.jar"],
-//    visibility: ["//vendor/infinix/X6525"],
-//    apex_available: ["//apex_available:platform"],
- //   
-    // REQUIRED:
- //   compile_dex: true,
- //   dex_preopt: {
- //       enabled: true,
- //   },
-    
-    // For system_ext partition
-//    system_ext_specific: true,
-// }
+prebuilt_etc_xml {
+    name: "android.hardware.cas@1.2-service-lazy",
+    owner: "infinix",
+    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.cas@1.2-service-lazy.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
 
-//     java_library {
-//     name: "framework-unisoc-ims",
-    
-//     srcs: [
-//         // Core IMS extensions (no telephony dependencies)
-//         "proprietary/unisoc_ims_common/com/android/ims/internal/*.java",
-        
-//         // Minimal telephony files needed
-//         "proprietary/unisoc-framework/com/android/ims/internal/ImsCallForwardInfoEx.java",
-//         "proprietary/unisoc-framework/android/telephony/UniCarrierConfigManager.java",
-//         "proprietary/unisoc-framework/android/telephony/UniSettings.java",
-//         "proprietary/unisoc-framework/com/android/internal/telephony/IUniCarrierConfigLoader.java",
-//         "proprietary/unisoc-framework/com/android/internal/telephony/IUniTelephony.java",
-//     ],
-    
-//     sdk_version: "core_platform",
-//     installable: true,
-    
-//     libs: [
-//         "framework",
-//         "ims-common",
-//         "telephony-common",
-//     ],
-    
-//     visibility: [
-//         "//frameworks/base",
-//         "//system/apex", 
-//         "//system/extras",
-//         "//vendor/infinix/X6525",
-//     ],
-// }
+
+prebuilt_etc_xml {
+    name: "android.hardware.drm-service.clearkey",
+    owner: "infinix",
+    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.drm-service.clearkey.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+
+prebuilt_etc_xml {
+    name: "combinedservice",
+    owner: "infinix",
+    src: "proprietary/vendor/etc/vintf/manifest/combinedservice.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+
+prebuilt_etc_xml {
+    name: "manifest_tneengine",
+    owner: "infinix",
+    src: "proprietary/vendor/etc/vintf/manifest/manifest_tneengine.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+
+prebuilt_etc_xml {
+    name: "power.stats-default",
+    owner: "infinix",
+    src: "proprietary/vendor/etc/vintf/manifest/power.stats-default.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+
+prebuilt_etc_xml {
+    name: "vendor.sprd.hardware.tranHwInfo@1.0",
+    owner: "infinix",
+    src: "proprietary/vendor/etc/vintf/manifest/vendor.sprd.hardware.tranHwInfo@1.0.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+
+android_app_import {
+    name: "AospBtOverlay",
+    owner: "infinix",
+    apk: "proprietary/vendor/overlay/AospBtOverlay/AospBtOverlay.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+
+android_app_import {
+    name: "AospWifiOverlay_Marlin3_Mainline",
+    owner: "infinix",
+    apk: "proprietary/vendor/overlay/AospWifiOverlay_Marlin3_Mainline/AospWifiOverlay_Marlin3_Mainline.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+
+android_app_import {
+    name: "NetworkStackOverlayGo",
+    owner: "infinix",
+    apk: "proprietary/vendor/overlay/NetworkStackOverlayGo.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+
+android_app_import {
+    name: "NetworkStackOverlayGsi",
+    owner: "infinix",
+    apk: "proprietary/vendor/overlay/NetworkStackOverlayGsi.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+
+android_app_import {
+    name: "TetheringConfigOverlayGo",
+    owner: "infinix",
+    apk: "proprietary/vendor/overlay/TetheringConfigOverlayGo.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+
+android_app_import {
+    name: "TetheringConfigOverlayGsi",
+    owner: "infinix",
+    apk: "proprietary/vendor/overlay/TetheringConfigOverlayGsi.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+
+android_app_import {
+    name: "TranssionCamera__auto_generated_rro_vendor",
+    owner: "infinix",
+    apk: "proprietary/vendor/overlay/TranssionCamera__auto_generated_rro_vendor.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+
+android_app_import {
+    name: "unisoc_go_overlay_frameworks_res",
+    owner: "infinix",
+    apk: "proprietary/vendor/overlay/unisoc_go_overlay_frameworks_res.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+
+android_app_import {
+    name: "unisoc_overlay_frameworks_res",
+    owner: "infinix",
+    apk: "proprietary/vendor/overlay/unisoc_overlay_frameworks_res.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+

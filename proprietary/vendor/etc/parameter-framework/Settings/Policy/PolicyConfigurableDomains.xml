@@ -114,7 +114,6 @@
       <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/anlg_dock_headset"/>
       <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/dgtl_dock_headset"/>
       <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/usb_accessory"/>
-      <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/usb_device"/>
       <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/fm_tuner"/>
       <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/tv_tuner"/>
       <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/line"/>
@@ -578,9 +577,6 @@
         </ConfigurableElement>
         <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/usb_accessory">
           <BitParameter Name="usb_accessory">0</BitParameter>
-        </ConfigurableElement>
-        <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/usb_device">
-          <BitParameter Name="usb_device">0</BitParameter>
         </ConfigurableElement>
         <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/fm_tuner">
           <BitParameter Name="fm_tuner">0</BitParameter>
@@ -1441,6 +1437,11 @@
   </ConfigurableDomain>
   <ConfigurableDomain Name="DeviceForInputSource.Camcorder" SequenceAware="false">
     <Configurations>
+      <Configuration Name="UsbDevice">
+        <CompoundRule Type="All">
+          <SelectionCriterionRule SelectionCriterion="AvailableInputDevices" MatchesWhen="Includes" Value="UsbDevice"/>
+        </CompoundRule>
+      </Configuration>
       <Configuration Name="UsbHeadsetIn">
         <CompoundRule Type="All">
           <SelectionCriterionRule SelectionCriterion="AvailableInputDevices" MatchesWhen="Includes" Value="UsbHeadset"/>
@@ -1461,12 +1462,30 @@
       </Configuration>
     </Configurations>
     <ConfigurableElements>
+      <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/usb_device"/>
       <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/usb_headset"/>
       <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/back_mic"/>
       <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/builtin_mic"/>
     </ConfigurableElements>
     <Settings>
+      <Configuration Name="UsbDevice">
+        <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/usb_device">
+          <BitParameter Name="usb_device">1</BitParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/usb_headset">
+          <BitParameter Name="usb_headset">0</BitParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/back_mic">
+          <BitParameter Name="back_mic">0</BitParameter>
+        </ConfigurableElement>
+        <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/builtin_mic">
+          <BitParameter Name="builtin_mic">0</BitParameter>
+        </ConfigurableElement>
+      </Configuration>
       <Configuration Name="UsbHeadsetIn">
+        <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/usb_device">
+          <BitParameter Name="usb_device">0</BitParameter>
+        </ConfigurableElement>
         <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/usb_headset">
           <BitParameter Name="usb_headset">1</BitParameter>
         </ConfigurableElement>
@@ -1478,6 +1497,9 @@
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="BackMic">
+        <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/usb_device">
+          <BitParameter Name="usb_device">0</BitParameter>
+        </ConfigurableElement>
         <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/usb_headset">
           <BitParameter Name="usb_headset">0</BitParameter>
         </ConfigurableElement>
@@ -1489,6 +1511,9 @@
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="BuiltinMic">
+        <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/usb_device">
+          <BitParameter Name="usb_device">0</BitParameter>
+        </ConfigurableElement>
         <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/usb_headset">
           <BitParameter Name="usb_headset">0</BitParameter>
         </ConfigurableElement>
@@ -1500,6 +1525,9 @@
         </ConfigurableElement>
       </Configuration>
       <Configuration Name="Default">
+        <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/usb_device">
+          <BitParameter Name="usb_device">0</BitParameter>
+        </ConfigurableElement>
         <ConfigurableElement Path="/Policy/policy/input_sources/camcorder/applicable_input_device/mask/usb_headset">
           <BitParameter Name="usb_headset">0</BitParameter>
         </ConfigurableElement>

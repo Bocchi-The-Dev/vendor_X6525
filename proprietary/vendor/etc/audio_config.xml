@@ -3,7 +3,7 @@
     <card_name val="sprdphone-sc2730"/>
     <log level="3"/>
     <mic_config main_mic="1" aux_mic="1"/>
-    <audio_zoom_supported val="0"/>
+    <voice_volume level="15"/>
     <nr>
         <nr_support rate="48000" enable="true" />
         <nr_support rate="44100" enable="true" />

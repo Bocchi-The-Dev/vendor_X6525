@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-/*
-** Copyright  2022 UNISOC Technologies Co.,Ltd.
-*/
+     SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+     SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 -->
 <debug_config>
     <boolean name="key_debug_restart_work_config" value="true"/>

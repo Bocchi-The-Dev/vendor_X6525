@@ -13,6 +13,11 @@
             "type": "DummyNode",
             "vendor": "SPRD",
             "id": "SinkNode"
+        },
+        {
+            "type": "TranAlgoPluginNode",
+            "vendor": "TRAN",
+            "id": "rec_TranAlgoPlugin"
         }
     ],
     "rootNodes": ["SourceNode0"],
@@ -21,6 +26,16 @@
             "from": {
                 "name": "SourceNode0",
                 "port": "result_out"
+            },
+            "to": {
+                "name": "rec_TranAlgoPlugin",
+                "port": "rec_in"
+            }
+        },
+        {
+            "from": {
+                "name": "rec_TranAlgoPlugin",
+                "port": "rec_out"
             },
             "to": {
                 "name": "SinkNode",

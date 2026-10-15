@@ -25,18 +25,9 @@
             "id": "SourceNode3"
         },
         {
-            "type": "DeWarpingNode",
-            "vendor": "SPRD",
-            "id": "async_DeWarping"
-        },
-        {
             "type": "FaceDetectSDKNode",
             "vendor": "SPRD",
             "id": "async_FaceDetect"
-        },
-        { "type": "GestureNode",
-            "vendor": "SPRD",
-            "id": "async_Gesture"
         },
         {
             "type": "SceneDetectNode",
@@ -44,9 +35,9 @@
             "id": "async_SceneDetect"
         },
         {
-            "type": "EISNode",
-            "vendor": "SPRD",
-            "id": "async_EIS"
+            "type": "TranAlgoPluginNode",
+            "vendor": "TRAN",
+            "id": "pre_async_TranAlgoPlugin"
         }
     ],
     "rootNodes": ["SourceNode0","SourceNode1","SourceNode2","SourceNode3"],
@@ -57,7 +48,7 @@
                 "port": "result_out"
             },
             "to": {
-                "name": "async_EIS",
+                "name": "async_FaceDetect",
                 "port": "in0"
             }
         },
@@ -67,7 +58,7 @@
                 "port": "result_out"
             },
             "to": {
-                "name": "async_EIS",
+                "name": "async_FaceDetect",
                 "port": "in0"
             }
         },
@@ -77,17 +68,7 @@
                 "port": "result_out"
             },
             "to": {
-                "name": "async_DeWarping",
-                "port": "in0"
-            }
-        },
-        {
-            "from": {
-                "name": "async_DeWarping",
-                "port": "out0"
-            },
-            "to": {
-                "name": "async_EIS",
+                "name": "async_FaceDetect",
                 "port": "in0"
             }
         },
@@ -97,26 +78,6 @@
                 "port": "result_out"
             },
             "to": {
-                "name": "async_EIS",
-                "port": "in0"
-            }
-        },
-        {
-            "from": {
-                "name": "async_EIS",
-                "port": "out0"
-            },
-            "to": {
-                "name": "async_Gesture",
-                "port": "in0"
-            }
-        },
-        {
-            "from": {
-                "name": "async_Gesture",
-                "port": "out0"
-            },
-            "to": {
                 "name": "async_FaceDetect",
                 "port": "in0"
             }
@@ -125,6 +86,16 @@
             "from": {
                 "name": "async_FaceDetect",
                 "port": "out0"
+            },
+            "to": {
+                "name": "pre_async_TranAlgoPlugin",
+                "port": "pre_async_in"
+            }
+        },
+        {
+            "from": {
+                "name": "pre_async_TranAlgoPlugin",
+                "port": "pre_async_out"
             },
             "to": {
                 "name": "async_SceneDetect",

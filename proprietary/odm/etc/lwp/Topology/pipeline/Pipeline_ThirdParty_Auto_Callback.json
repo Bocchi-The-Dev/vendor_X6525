@@ -28,6 +28,11 @@
             "type": "DummyNode",
             "vendor": "SPRD",
             "id": "SinkNode"
+        },
+        {
+            "type": "TranAlgoPluginNode",
+            "vendor": "TRAN",
+            "id": "prev_TranAlgoPlugin"
         }
     ],
     "rootNodes": ["SourceNode0","SourceNode1","SourceNode2","SourceNode3"],
@@ -38,8 +43,8 @@
                 "port": "result_out"
             },
             "to": {
-                "name": "SinkNode",
-                "port": "in0"
+                "name": "prev_TranAlgoPlugin",
+                "port": "pre_in"
             }
         },
         {
@@ -48,8 +53,8 @@
                 "port": "result_out"
             },
             "to": {
-                "name": "SinkNode",
-                "port": "in0"
+                "name": "prev_TranAlgoPlugin",
+                "port": "pre_in"
             }
         },
         {
@@ -66,6 +71,16 @@
             "from": {
                 "name": "SourceNode3",
                 "port": "result_out"
+            },
+            "to": {
+                "name": "SinkNode",
+                "port": "in0"
+            }
+        },
+        {
+            "from": {
+                "name": "prev_TranAlgoPlugin",
+                "port": "pre_out"
             },
             "to": {
                 "name": "SinkNode",

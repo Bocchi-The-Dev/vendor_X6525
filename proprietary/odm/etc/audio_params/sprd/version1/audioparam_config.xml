@@ -1,5 +1,9 @@
 <audioparam_config>
-    <AudioTester ChipName="sharkl5Pro" FmType="Digital" CodeType="2730" SocketBufferSize="0xffff" DiagBufferSize="0xfff0" etc_path="/vendor/etc/audio_params/sprd" SmartAmpSupport="fbsmartamp" SmartAmpUseCase="playback" version="1.5">
+<!--
+     SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+     SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
+-->
+    <AudioTester ChipName="sharkl5Pro" FmType="Digital" CodeType="2730" SocketBufferSize="0xffff" DiagBufferSize="0xfff0" etc_path="/odm/etc/audio_params/sprd" SmartAmpSupport="fbsmartamp" SmartAmpUseCase="playback" version="1.5">
         <common>
             <audioparam name="Audio\Handset\NB1" Path="Audio\RCV" Usecase="GSM,TD,CDMA2000,WCDMA_NB,VOLTE_NB,VOWIFI_NB" OutDevice="Earpiece" />
             <audioparam name="Audio\Handset\NB2" Path="Audio\RCV" Usecase="NONE" OutDevice="Earpiece" />

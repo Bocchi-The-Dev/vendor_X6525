@@ -74,6 +74,11 @@
 		<prop>persist.vendor.cam.iss.dump.enable</prop>
 	</item>
 	<item>
+		<name>SingleFrame</name>
+		<parentitem></parentitem>
+		<prop>persist.vendor.cam.multiFrame.bypass</prop>
+	</item>
+	<item>
 		<name>Pipeline Block Info</name>
 		<parentitem></parentitem>
 		<prop>persist.vendor.cam.icap.pm.pipeline.eb</prop>

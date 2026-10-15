@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--6-->
+<!--9230_1h10_go-->
 <unipnp version="0">
     <feature name="HelloWorldFeature">
         <classname>com.unipnp.feature.HelloWorldFeature</classname>
@@ -44,10 +44,6 @@
                     <string>*</string>
                 </action>
             </item>
-            <item id="process_adj_protect">
-                <string>com.sprd.logmanager</string>
-                <string>com.android.traceur</string>
-            </item>
         </policy>
     </feature>
 
@@ -87,27 +83,6 @@
                 <action name="PROCESS_SCHED">
                     <string>com.tencent.tmgp.pubgmhd|com.tencent.tmgp.pubgmhd|UI Thread,other,-19#RenderThread*,other,-19#RHIThread,other,-19|-1</string>
                     <string>com.kiloo.subwaysurf|com.kiloo.subwaysurf|iloo.subwaysurf, other, -19#Unity*, other, -19|-1</string>
-                    <string>com.tencent.tmgp.sgame|com.tencent.tmgp.sgame|cent.tmgp.sgame, other, -19#Unity*, other, -19|-1</string>
-                    <string>com.mobile.legends|com.mobile.legends:UnityKillsMe|Thread*, other, -19#Unity*, other, -19|-1</string>
-                    <string>com.tencent.ig|com.tencent.ig|MainThread-UE4, other, -19#Thread*, other, -19#Unity*, other, -19|-1</string>
-                    <string>com.dts.freefireth|com.dts.freefireth|Thread*, other, -19#Unity*, other, -19|-1</string>
-                    <string>com.ngame.allstar.eu|com.ngame.allstar.eu|Thread*, other, -19#Unity*, other, -19|-1</string>
-                    <string>com.supercell.brawlstars|com.supercell.brawlstars|Thread*, other, -19#Unity*, other, -19|-1</string>
-                    <string>jp.konami.pesam|jp.konami.pesam|MainThread-UE4, other, -19#Thread*, other, -19#RHIThread, other, -19|-1</string>
-                    <string>com.lilithgame.roc.gp|com.lilithgame.roc.gp|Thread*, other, -19#Unity*, other, -19|-1</string>
-                    <string>com.tencent.godgame|com.tencent.godgame|Thread*, other, -19#Unity*, other, -19|-1</string>
-                    <string>com.garena.game.codm|com.garena.game.codm|Thread*, other, -19#Unity*, other, -19|-1</string>
-                    <string>com.activision.callofduty.shooter|com.activision.callofduty.shooter|Thread*, other, -19#Unity*, other, -19|-1</string>
-                    <string>com.igg.android.lordsmobile|com.igg.android.lordsmobile|Thread*, other, -19#Unity*, other, -19|-1</string>
-                    <string>com.shopee.id|com.shopee.id|com.shopee.id,other,-19#RenderThread*,other,-19|-1</string>
-                    <string>com.facebook.orca|com.facebook.orca|m.facebook.orca,other,-19#RenderThread*,other,-19|-1</string>
-                    <string>com.google.android.youtube|com.google.android.youtube|android.youtube,other,-19#RenderThread*,other,-19|-1</string>
-                </action>
-                <action name="SCENARIO">
-                    <string>com.mobile.legends,legends</string>
-                    <string>com.tencent.ig,ig</string>
-                    <string>com.dts.freefireth.FFMainActivity,freefire</string>
-                    <string>com.instagram.android,ins</string>
                 </action>
             </item>
             <item id="activity_paused">
@@ -115,9 +90,6 @@
                     <string>*</string>
                 </action>
                 <action name="STOP_PROCESS_SCHED">
-                    <string>*</string>
-                </action>
-                <action name="STOP_SCENARIO">
                     <string>*</string>
                 </action>
             </item>
@@ -212,7 +184,7 @@
     <feature name="MemoryCleanFeature">
         <classname>com.unipnp.feature.memory.MemoryCleanFeature</classname>
         <dexpath>/system/framework/unipnp-features.jar</dexpath>
-        <switch>1</switch>
+        <switch>0</switch>
         <version>1</version>
         <id>7</id>
         <unievent>
@@ -307,7 +279,6 @@
                 <string>com.android.gallery3d</string>
                 <string>com.android.contacts</string>
                 <string>com.android.deskclock</string>
-                <string>com.google.android.dialer</string>
             </item>
         </policy>
     </feature>
@@ -429,7 +400,6 @@
                 <string>*,1,200,1</string>
                 <string>com.sprd.powersavemodelauncher,0,-1,-1</string>
                 <string>com.android.camera2,0,-1,-1</string>
-                <string>com.google.android.youtube,1,100,1</string>
             </item>
         </policy>
     </feature>
@@ -437,7 +407,7 @@
     <feature name="RotateScreenScene">
         <classname>com.unipnp.feature.RotateScreenScene</classname>
         <dexpath>/system/framework/unipnp-features.jar</dexpath>
-        <switch>1</switch>
+        <switch>0</switch>
         <version>1</version>
         <id>14</id>
         <unievent>
@@ -451,7 +421,6 @@
                 <action name="PROCESS_SCHED">
                     <!--<string>*|*|UI Thread,other,-19|1000</string>-->
                     <string>com.google.android.dialer|com.google.android.dialer|.android.dialer,rr,1#RenderThread,other,-19|1000</string>
-                    <string>com.google.android.youtube|com.google.android.youtube|android.youtube,rr,1#RenderThread,other,-19|1000</string>
                 </action>
             </item>
         </policy>
@@ -497,128 +466,5 @@
                 <string>com.unisoc.helloworld</string>
             </item>
         </policy>
-    </feature>
-
-    <feature name="ProcessUclampScene">
-        <classname>com.unipnp.feature.ProcessUclampScene</classname>
-        <dexpath>/system/framework/unipnp-features.jar</dexpath>
-        <switch>1</switch>
-        <version>1</version>
-        <id>17</id>
-        <unievent>
-            <event>unievent_peak_refresh_rate</event>
-        </unievent>
-        <policy>
-            <item id="process_thread">
-                <string>process,gsp-core,500,1024</string>
-            </item>
-            <item id="process_reduce">
-                <string>process,gsp-core,0,1024</string>
-            </item>
-        </policy>
-    </feature>
-
-    <feature name="ClickScene">
-        <classname>com.unipnp.feature.ClickScene</classname>
-        <dexpath>/system/framework/unipnp-features.jar</dexpath>
-        <switch>1</switch>
-        <version>1</version>
-        <id>18</id>
-        <unievent>
-            <event>unievent_activity_resumed</event>
-            <event>unievent_activity_paused</event>
-            <event>unievent_motion_event</event>
-        </unievent>
-        <policy>
-            <item id="click">
-                <action name="POWER_BOOST">
-                    <string>*,POWER_HINT_VENDOR_INTERACTION_TOUCH,0</string>
-                </action>
-            </item>
-            <item id="stop">
-                <action name="STOP_POWER_BOOST">
-                    <string>*</string>
-                </action>
-            </item>
-            <item id="touch_boost_white_list">
-                <string>com.android.settings</string>
-            </item>
-            <item id="touch_boost_black_list">
-                <string>com.android.music</string>
-                <string>com.android.soundrecorder</string>
-                <string>com.thunderst.radio</string>
-                <string>com.android.documentsui</string>
-                <string>com.android.calendar</string>
-                <string>com.android.deskclock</string>
-                <string>com.sprd.note</string>
-                <string>com.sprd.sprdnote</string>
-                <string>com.android.calculator2</string>
-                <string>com.sprd.fileexplorer</string>
-             </item>
-         </policy>
-     </feature>
-     <feature name="RemoveRecentTaskScene">
-        <classname>com.unipnp.feature.RemoveRecentTaskScene</classname>
-        <dexpath>/system/framework/unipnp-features.jar</dexpath>
-        <switch>1</switch>
-        <version>1</version>
-        <id>19</id>
-        <policy>
-            <item id="force_stop_app_list">
-                <string>com.apkpure.aegon</string>
-                <string>com.lenovo.anyshare</string>
-                <string>cn.wps.moffice_eng</string>
-                <string>com.picsart.studio</string>
-                <string>com.tencent.ig</string>
-                <string>com.UCMobile</string>
-                <string>com.UCMobile.intl</string>
-                <string>com.kiloo.subwaysurf</string>
-                <string>com.intsig.camscanner</string>
-                <string>com.tencent.qqlive</string>
-                <string>com.mojang.minecraftpe</string>
-                <string>com.camerasideas.instashot</string>
-                <string>com.dewmobile.kuaiya</string>
-                <string>com.gorgeous.lite</string>
-                <string>com.outfit7.mytalkingangelafree</string>
-                <string>com.outfit7.mytalkingtomfree</string>
-                <string>com.tencent.mm</string>
-                <string>com.ovelin.guitartuna</string>
-                <string>com.p1.mobile.putong</string>
-                <string>com.quvideo.xiaoying</string>
-                <string>com.xvideostudio.videoeditor</string>
-                <string>com.JindoBlu.Antistress</string>
-                <string>com.imangi.templerun2</string>
-                <string>com.mt.mtxx.mtxx</string>
-                <string>com.meitu.meiyancamera</string>
-                <string>com.taptap</string>
-                <string>com.lemon.faceu</string>
-                <string>com.yoosee</string>
-                <string>com.meitu.makeup</string>
-                <string>com.taobao.taobao</string>
-                <string>com.dramaton.slime</string>
-                <string>com.tencent.ttpic</string>
-                <string>com.benqu.wuta</string>
-                <string>com.ss.android.ugc.aweme</string>
-                <string>com.sinyee.babybus.taxi</string>
-                <string>com.xingin.xhs</string>
-                <string>com.xiaomi.hm.health</string>
-                <string>com.vivo.easyshare</string>
-                <string>com.xiaomi.smarthome</string>
-                <string>com.sinyee.babybus.restaurant</string>
-                <string>com.netease.mrzh</string>
-                <string>com.sinyee.babybus.princess</string>
-            </item>
-        </policy>
-     </feature>
-     <feature name="ScrollSystemUIScene">
-        <classname>com.unipnp.feature.ScrollSystemUIScene</classname>
-        <dexpath>/system/framework/unipnp-features.jar</dexpath>
-        <switch>1</switch>
-        <version>1</version>
-        <id>20</id>
-        <unievent>
-            <event>unievent_systemui_scheduler_rr</event>
-            <event>unievent_systemui_scheduler_other</event>
-        </unievent>
     </feature>
 </unipnp>

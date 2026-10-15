@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<audio_pga time="2023-03-18 22:39:22">
+<!--
+     SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+     SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
+-->
+<audio_pga time="2023-11-10 13:55:18">
     <Audio>
         <Handset>
             <NB1>
@@ -8,21 +12,21 @@
                 </VBC_ADC2_DG>
                 <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
                     <volume0 visible="true" val="0x18" />
-                    <volume1 visible="true" val="0x18" />
-                    <volume2 visible="true" val="0x18" />
-                    <volume3 visible="true" val="0x18" />
-                    <volume4 visible="true" val="0x18" />
-                    <volume5 visible="true" val="0x18" />
-                    <volume6 visible="true" val="0x18" />
-                    <volume7 visible="true" val="0x18" />
-                    <volume8 visible="true" val="0x18" />
-                    <volume9 visible="true" val="0x18" />
-                    <volume10 visible="true" val="0x18" />
-                    <volume11 visible="true" val="0x18" />
-                    <volume12 visible="true" val="0x18" />
-                    <volume13 visible="true" val="0x18" />
-                    <volume14 visible="true" val="0x18" />
-                    <volume15 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x19" />
+                    <volume2 visible="true" val="0x19" />
+                    <volume3 visible="true" val="0x19" />
+                    <volume4 visible="true" val="0x19" />
+                    <volume5 visible="true" val="0x19" />
+                    <volume6 visible="true" val="0x19" />
+                    <volume7 visible="true" val="0x19" />
+                    <volume8 visible="true" val="0x19" />
+                    <volume9 visible="true" val="0x19" />
+                    <volume10 visible="true" val="0x19" />
+                    <volume11 visible="true" val="0x19" />
+                    <volume12 visible="true" val="0x19" />
+                    <volume13 visible="true" val="0x19" />
+                    <volume14 visible="true" val="0x19" />
+                    <volume15 visible="true" val="0x19" />
                 </VBC_DAC1_DG>
                 <VBC_ST_DG ctl="VBC ST DG Set">
                     <volume0 visible="true" val="0x18" />
@@ -86,7 +90,7 @@
             </NB2>
             <WB1>
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
-                    <volume0 visible="true" val="0x18" />
+                    <volume0 visible="true" val="0x19" />
                 </VBC_ADC2_DG>
                 <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
                     <volume0 visible="true" val="0x18" />
@@ -168,18 +172,18 @@
             </WB2>
             <SWB1>
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
-                    <volume0 visible="true" val="0x18" />
+                    <volume0 visible="true" val="0x19" />
                 </VBC_ADC2_DG>
                 <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
                     <volume0 visible="true" val="0x18" />
-                    <volume1 visible="true" val="0x3a" />
-                    <volume2 visible="true" val="0x33" />
-                    <volume3 visible="true" val="0x2d" />
-                    <volume4 visible="true" val="0x26" />
-                    <volume5 visible="true" val="0x23" />
-                    <volume6 visible="true" val="0x1f" />
-                    <volume7 visible="true" val="0x1b" />
-                    <volume8 visible="true" val="0x19" />
+                    <volume1 visible="true" val="0x18" />
+                    <volume2 visible="true" val="0x18" />
+                    <volume3 visible="true" val="0x18" />
+                    <volume4 visible="true" val="0x18" />
+                    <volume5 visible="true" val="0x18" />
+                    <volume6 visible="true" val="0x18" />
+                    <volume7 visible="true" val="0x18" />
+                    <volume8 visible="true" val="0x18" />
                     <volume9 visible="true" val="0x18" />
                     <volume10 visible="true" val="0x18" />
                     <volume11 visible="true" val="0x18" />
@@ -250,7 +254,7 @@
             </FB1>
             <VOIP1>
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
-                    <volume0 visible="true" val="0x18" />
+                    <volume0 visible="true" val="0x19" />
                 </VBC_ADC2_DG>
                 <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
                     <volume0 visible="true" val="0x18" />
@@ -293,25 +297,25 @@
         <Handsfree>
             <NB1>
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
-                    <volume0 visible="true" val="0x1c" />
+                    <volume0 visible="true" val="0x19" />
                 </VBC_ADC2_DG>
-                <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
                     <volume0 visible="true" val="0x18" />
-                    <volume1 visible="true" val="0x1e" />
-                    <volume2 visible="true" val="0x1e" />
-                    <volume3 visible="true" val="0x1e" />
-                    <volume4 visible="true" val="0x1e" />
-                    <volume5 visible="true" val="0x1e" />
-                    <volume6 visible="true" val="0x1e" />
-                    <volume7 visible="true" val="0x1e" />
-                    <volume8 visible="true" val="0x1e" />
-                    <volume9 visible="true" val="0x1f" />
-                    <volume10 visible="true" val="0x18" />
-                    <volume11 visible="true" val="0x18" />
-                    <volume12 visible="true" val="0x18" />
-                    <volume13 visible="true" val="0x18" />
-                    <volume14 visible="true" val="0x18" />
-                    <volume15 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x1b" />
+                    <volume2 visible="true" val="0x1b" />
+                    <volume3 visible="true" val="0x1b" />
+                    <volume4 visible="true" val="0x1b" />
+                    <volume5 visible="true" val="0x1b" />
+                    <volume6 visible="true" val="0x1b" />
+                    <volume7 visible="true" val="0x1b" />
+                    <volume8 visible="true" val="0x1b" />
+                    <volume9 visible="true" val="0x1b" />
+                    <volume10 visible="true" val="0x1b" />
+                    <volume11 visible="true" val="0x1b" />
+                    <volume12 visible="true" val="0x1b" />
+                    <volume13 visible="true" val="0x1b" />
+                    <volume14 visible="true" val="0x1b" />
+                    <volume15 visible="true" val="0x1b" />
                 </VBC_DAC1_DG>
                 <VBC_ST_DG ctl="VBC ST DG Set">
                     <volume0 visible="true" val="0x18" />
@@ -336,7 +340,7 @@
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
                     <volume0 visible="true" val="0x18" />
                 </VBC_ADC2_DG>
-                <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
                     <volume0 visible="true" val="0x18" />
                     <volume1 visible="true" val="0x18" />
                     <volume2 visible="true" val="0x18" />
@@ -375,25 +379,25 @@
             </NB2>
             <WB1>
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
-                    <volume0 visible="true" val="0x1c" />
+                    <volume0 visible="true" val="0x19" />
                 </VBC_ADC2_DG>
-                <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
                     <volume0 visible="true" val="0x18" />
-                    <volume1 visible="true" val="0x1e" />
-                    <volume2 visible="true" val="0x1e" />
-                    <volume3 visible="true" val="0x1e" />
-                    <volume4 visible="true" val="0x1e" />
-                    <volume5 visible="true" val="0x1e" />
-                    <volume6 visible="true" val="0x1e" />
-                    <volume7 visible="true" val="0x1e" />
-                    <volume8 visible="true" val="0x1e" />
-                    <volume9 visible="true" val="0x1e" />
-                    <volume10 visible="true" val="0x18" />
-                    <volume11 visible="true" val="0x18" />
-                    <volume12 visible="true" val="0x18" />
-                    <volume13 visible="true" val="0x18" />
-                    <volume14 visible="true" val="0x18" />
-                    <volume15 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x1b" />
+                    <volume2 visible="true" val="0x1b" />
+                    <volume3 visible="true" val="0x1b" />
+                    <volume4 visible="true" val="0x1b" />
+                    <volume5 visible="true" val="0x1b" />
+                    <volume6 visible="true" val="0x1b" />
+                    <volume7 visible="true" val="0x1b" />
+                    <volume8 visible="true" val="0x1b" />
+                    <volume9 visible="true" val="0x1b" />
+                    <volume10 visible="true" val="0x1b" />
+                    <volume11 visible="true" val="0x1b" />
+                    <volume12 visible="true" val="0x1b" />
+                    <volume13 visible="true" val="0x1b" />
+                    <volume14 visible="true" val="0x1b" />
+                    <volume15 visible="true" val="0x1b" />
                 </VBC_DAC1_DG>
                 <VBC_ST_DG ctl="VBC ST DG Set">
                     <volume0 visible="true" val="0x18" />
@@ -418,7 +422,7 @@
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
                     <volume0 visible="true" val="0x18" />
                 </VBC_ADC2_DG>
-                <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
                     <volume0 visible="true" val="0x18" />
                     <volume1 visible="true" val="0x18" />
                     <volume2 visible="true" val="0x18" />
@@ -457,25 +461,25 @@
             </WB2>
             <SWB1>
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
-                    <volume0 visible="true" val="0x1b" />
+                    <volume0 visible="true" val="0x19" />
                 </VBC_ADC2_DG>
-                <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
                     <volume0 visible="true" val="0x18" />
-                    <volume1 visible="true" val="0x1d" />
-                    <volume2 visible="true" val="0x1d" />
-                    <volume3 visible="true" val="0x1d" />
-                    <volume4 visible="true" val="0x1d" />
-                    <volume5 visible="true" val="0x1d" />
-                    <volume6 visible="true" val="0x1d" />
-                    <volume7 visible="true" val="0x1d" />
-                    <volume8 visible="true" val="0x18" />
-                    <volume9 visible="true" val="0x18" />
-                    <volume10 visible="true" val="0x18" />
-                    <volume11 visible="true" val="0x18" />
-                    <volume12 visible="true" val="0x18" />
-                    <volume13 visible="true" val="0x18" />
-                    <volume14 visible="true" val="0x18" />
-                    <volume15 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x1a" />
+                    <volume2 visible="true" val="0x1a" />
+                    <volume3 visible="true" val="0x1a" />
+                    <volume4 visible="true" val="0x1a" />
+                    <volume5 visible="true" val="0x1a" />
+                    <volume6 visible="true" val="0x1a" />
+                    <volume7 visible="true" val="0x1a" />
+                    <volume8 visible="true" val="0x1a" />
+                    <volume9 visible="true" val="0x1a" />
+                    <volume10 visible="true" val="0x1a" />
+                    <volume11 visible="true" val="0x1a" />
+                    <volume12 visible="true" val="0x1a" />
+                    <volume13 visible="true" val="0x1a" />
+                    <volume14 visible="true" val="0x1a" />
+                    <volume15 visible="true" val="0x1a" />
                 </VBC_DAC1_DG>
                 <VBC_ST_DG ctl="VBC ST DG Set">
                     <volume0 visible="true" val="0x18" />
@@ -500,7 +504,7 @@
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
                     <volume0 visible="true" val="0x18" />
                 </VBC_ADC2_DG>
-                <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
                     <volume0 visible="true" val="0x18" />
                     <volume1 visible="true" val="0x18" />
                     <volume2 visible="true" val="0x18" />
@@ -539,25 +543,25 @@
             </FB1>
             <VOIP1>
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
-                    <volume0 visible="true" val="0x18" />
+                    <volume0 visible="true" val="0x19" />
                 </VBC_ADC2_DG>
-                <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
                     <volume0 visible="true" val="0x18" />
-                    <volume1 visible="true" val="0x1e" />
-                    <volume2 visible="true" val="0x1e" />
-                    <volume3 visible="true" val="0x1e" />
-                    <volume4 visible="true" val="0x1e" />
-                    <volume5 visible="true" val="0x1e" />
-                    <volume6 visible="true" val="0x1e" />
-                    <volume7 visible="true" val="0x1e" />
-                    <volume8 visible="true" val="0x18" />
-                    <volume9 visible="true" val="0x18" />
-                    <volume10 visible="true" val="0x18" />
-                    <volume11 visible="true" val="0x18" />
-                    <volume12 visible="true" val="0x18" />
-                    <volume13 visible="true" val="0x18" />
-                    <volume14 visible="true" val="0x18" />
-                    <volume15 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x1a" />
+                    <volume2 visible="true" val="0x1a" />
+                    <volume3 visible="true" val="0x1a" />
+                    <volume4 visible="true" val="0x1a" />
+                    <volume5 visible="true" val="0x1a" />
+                    <volume6 visible="true" val="0x1a" />
+                    <volume7 visible="true" val="0x1a" />
+                    <volume8 visible="true" val="0x1a" />
+                    <volume9 visible="true" val="0x1a" />
+                    <volume10 visible="true" val="0x1a" />
+                    <volume11 visible="true" val="0x1a" />
+                    <volume12 visible="true" val="0x1a" />
+                    <volume13 visible="true" val="0x1a" />
+                    <volume14 visible="true" val="0x1a" />
+                    <volume15 visible="true" val="0x1a" />
                 </VBC_DAC1_DG>
                 <VBC_ST_DG ctl="VBC ST DG Set">
                     <volume0 visible="true" val="0x18" />
@@ -582,25 +586,25 @@
         <Headset4P>
             <NB1>
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
-                    <volume0 visible="true" val="0x1a" />
+                    <volume0 visible="true" val="0x18" />
                 </VBC_ADC2_DG>
                 <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
                     <volume0 visible="true" val="0x18" />
-                    <volume1 visible="true" val="0x18" />
-                    <volume2 visible="true" val="0x18" />
-                    <volume3 visible="true" val="0x18" />
-                    <volume4 visible="true" val="0x18" />
-                    <volume5 visible="true" val="0x18" />
-                    <volume6 visible="true" val="0x18" />
-                    <volume7 visible="true" val="0x18" />
-                    <volume8 visible="true" val="0x18" />
-                    <volume9 visible="true" val="0x18" />
-                    <volume10 visible="true" val="0x18" />
-                    <volume11 visible="true" val="0x18" />
-                    <volume12 visible="true" val="0x18" />
-                    <volume13 visible="true" val="0x18" />
-                    <volume14 visible="true" val="0x18" />
-                    <volume15 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x1a" />
+                    <volume2 visible="true" val="0x1a" />
+                    <volume3 visible="true" val="0x1a" />
+                    <volume4 visible="true" val="0x1a" />
+                    <volume5 visible="true" val="0x1a" />
+                    <volume6 visible="true" val="0x1a" />
+                    <volume7 visible="true" val="0x1a" />
+                    <volume8 visible="true" val="0x1a" />
+                    <volume9 visible="true" val="0x1a" />
+                    <volume10 visible="true" val="0x1a" />
+                    <volume11 visible="true" val="0x1a" />
+                    <volume12 visible="true" val="0x1a" />
+                    <volume13 visible="true" val="0x1a" />
+                    <volume14 visible="true" val="0x1a" />
+                    <volume15 visible="true" val="0x1a" />
                 </VBC_DAC1_DG>
                 <VBC_ST_DG ctl="VBC ST DG Set">
                     <volume0 visible="true" val="0x18" />
@@ -664,7 +668,7 @@
             </NB2>
             <WB1>
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
-                    <volume0 visible="true" val="0x1c" />
+                    <volume0 visible="true" val="0x18" />
                 </VBC_ADC2_DG>
                 <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
                     <volume0 visible="true" val="0x18" />
@@ -679,7 +683,7 @@
                     <volume9 visible="true" val="0x18" />
                     <volume10 visible="true" val="0x18" />
                     <volume11 visible="true" val="0x18" />
-                    <volume12 visible="true" val="0x1c" />
+                    <volume12 visible="true" val="0x18" />
                     <volume13 visible="true" val="0x18" />
                     <volume14 visible="true" val="0x18" />
                     <volume15 visible="true" val="0x18" />
@@ -832,21 +836,21 @@
                 </VBC_ADC2_DG>
                 <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
                     <volume0 visible="true" val="0x18" />
-                    <volume1 visible="true" val="0x18" />
-                    <volume2 visible="true" val="0x18" />
-                    <volume3 visible="true" val="0x18" />
-                    <volume4 visible="true" val="0x18" />
-                    <volume5 visible="true" val="0x18" />
-                    <volume6 visible="true" val="0x18" />
-                    <volume7 visible="true" val="0x18" />
-                    <volume8 visible="true" val="0x18" />
-                    <volume9 visible="true" val="0x18" />
-                    <volume10 visible="true" val="0x18" />
-                    <volume11 visible="true" val="0x18" />
-                    <volume12 visible="true" val="0x18" />
-                    <volume13 visible="true" val="0x18" />
-                    <volume14 visible="true" val="0x18" />
-                    <volume15 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x1c" />
+                    <volume2 visible="true" val="0x1c" />
+                    <volume3 visible="true" val="0x1c" />
+                    <volume4 visible="true" val="0x1c" />
+                    <volume5 visible="true" val="0x1c" />
+                    <volume6 visible="true" val="0x1c" />
+                    <volume7 visible="true" val="0x1c" />
+                    <volume8 visible="true" val="0x1c" />
+                    <volume9 visible="true" val="0x1c" />
+                    <volume10 visible="true" val="0x1c" />
+                    <volume11 visible="true" val="0x1c" />
+                    <volume12 visible="true" val="0x1c" />
+                    <volume13 visible="true" val="0x1c" />
+                    <volume14 visible="true" val="0x1c" />
+                    <volume15 visible="true" val="0x1c" />
                 </VBC_DAC1_DG>
                 <VBC_ST_DG ctl="VBC ST DG Set">
                     <volume0 visible="true" val="0x18" />
@@ -1742,13 +1746,13 @@
                 </VBC_ADC2_DG>
                 <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
                     <volume0 visible="true" val="0x18" />
-                    <volume1 visible="true" val="0x1c" />
-                    <volume2 visible="true" val="0x1c" />
-                    <volume3 visible="true" val="0x1c" />
-                    <volume4 visible="true" val="0x1c" />
-                    <volume5 visible="true" val="0x1c" />
-                    <volume6 visible="true" val="0x1c" />
-                    <volume7 visible="true" val="0x1c" />
+                    <volume1 visible="true" val="0x18" />
+                    <volume2 visible="true" val="0x18" />
+                    <volume3 visible="true" val="0x18" />
+                    <volume4 visible="true" val="0x18" />
+                    <volume5 visible="true" val="0x18" />
+                    <volume6 visible="true" val="0x18" />
+                    <volume7 visible="true" val="0x18" />
                     <volume8 visible="true" val="0x18" />
                     <volume9 visible="true" val="0x18" />
                     <volume10 visible="true" val="0x18" />
@@ -2318,7 +2322,7 @@
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
                     <volume0 visible="true" val="0x18" />
                 </VBC_ADC2_DG>
-                <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
                     <volume0 visible="true" val="0x18" />
                     <volume1 visible="true" val="0x18" />
                     <volume2 visible="true" val="0x18" />
@@ -2359,7 +2363,7 @@
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
                     <volume0 visible="true" val="0x18" />
                 </VBC_ADC2_DG>
-                <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
                     <volume0 visible="true" val="0x18" />
                     <volume1 visible="true" val="0x18" />
                     <volume2 visible="true" val="0x18" />
@@ -2400,7 +2404,7 @@
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
                     <volume0 visible="true" val="0x18" />
                 </VBC_ADC2_DG>
-                <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
                     <volume0 visible="true" val="0x18" />
                     <volume1 visible="true" val="0x18" />
                     <volume2 visible="true" val="0x18" />
@@ -2441,7 +2445,7 @@
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
                     <volume0 visible="true" val="0x18" />
                 </VBC_ADC2_DG>
-                <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
                     <volume0 visible="true" val="0x18" />
                     <volume1 visible="true" val="0x18" />
                     <volume2 visible="true" val="0x18" />
@@ -2482,7 +2486,7 @@
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
                     <volume0 visible="true" val="0x18" />
                 </VBC_ADC2_DG>
-                <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
                     <volume0 visible="true" val="0x18" />
                     <volume1 visible="true" val="0x18" />
                     <volume2 visible="true" val="0x18" />
@@ -2523,23 +2527,23 @@
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
                     <volume0 visible="true" val="0x18" />
                 </VBC_ADC2_DG>
-                <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
                     <volume0 visible="true" val="0x18" />
-                    <volume1 visible="true" val="0x18" />
-                    <volume2 visible="true" val="0x18" />
-                    <volume3 visible="true" val="0x18" />
-                    <volume4 visible="true" val="0x18" />
-                    <volume5 visible="true" val="0x18" />
-                    <volume6 visible="true" val="0x18" />
-                    <volume7 visible="true" val="0x18" />
-                    <volume8 visible="true" val="0x18" />
-                    <volume9 visible="true" val="0x18" />
-                    <volume10 visible="true" val="0x18" />
-                    <volume11 visible="true" val="0x18" />
-                    <volume12 visible="true" val="0x18" />
-                    <volume13 visible="true" val="0x18" />
-                    <volume14 visible="true" val="0x18" />
-                    <volume15 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x21" />
+                    <volume2 visible="true" val="0x21" />
+                    <volume3 visible="true" val="0x21" />
+                    <volume4 visible="true" val="0x21" />
+                    <volume5 visible="true" val="0x21" />
+                    <volume6 visible="true" val="0x21" />
+                    <volume7 visible="true" val="0x21" />
+                    <volume8 visible="true" val="0x21" />
+                    <volume9 visible="true" val="0x21" />
+                    <volume10 visible="true" val="0x21" />
+                    <volume11 visible="true" val="0x21" />
+                    <volume12 visible="true" val="0x21" />
+                    <volume13 visible="true" val="0x21" />
+                    <volume14 visible="true" val="0x21" />
+                    <volume15 visible="true" val="0x21" />
                 </VBC_DAC1_DG>
                 <VBC_ST_DG ctl="VBC ST DG Set">
                     <volume0 visible="true" val="0x18" />
@@ -2564,7 +2568,7 @@
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
                     <volume0 visible="true" val="0x18" />
                 </VBC_ADC2_DG>
-                <VBC_DAC1_DG ctl="VBC DAC1 DG Set">
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
                     <volume0 visible="true" val="0x18" />
                     <volume1 visible="true" val="0x18" />
                     <volume2 visible="true" val="0x18" />
@@ -2602,6 +2606,295 @@
                 </VBC_ST_DG>
             </VOIP1>
         </HighVolume>
+        <HighVolumeMax>
+            <NB1>
+                <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                </VBC_ADC2_DG>
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x18" />
+                    <volume2 visible="true" val="0x18" />
+                    <volume3 visible="true" val="0x18" />
+                    <volume4 visible="true" val="0x18" />
+                    <volume5 visible="true" val="0x18" />
+                    <volume6 visible="true" val="0x18" />
+                    <volume7 visible="true" val="0x18" />
+                    <volume8 visible="true" val="0x18" />
+                    <volume9 visible="true" val="0x18" />
+                    <volume10 visible="true" val="0x18" />
+                    <volume11 visible="true" val="0x18" />
+                    <volume12 visible="true" val="0x18" />
+                    <volume13 visible="true" val="0x18" />
+                    <volume14 visible="true" val="0x18" />
+                    <volume15 visible="true" val="0x18" />
+                </VBC_DAC1_DG>
+                <VBC_ST_DG ctl="VBC ST DG Set">
+                    <volume0 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x18" />
+                    <volume2 visible="true" val="0x18" />
+                    <volume3 visible="true" val="0x18" />
+                    <volume4 visible="true" val="0x18" />
+                    <volume5 visible="true" val="0x18" />
+                    <volume6 visible="true" val="0x18" />
+                    <volume7 visible="true" val="0x18" />
+                    <volume8 visible="true" val="0x18" />
+                    <volume9 visible="true" val="0x18" />
+                    <volume10 visible="true" val="0x18" />
+                    <volume11 visible="true" val="0x18" />
+                    <volume12 visible="true" val="0x18" />
+                    <volume13 visible="true" val="0x18" />
+                    <volume14 visible="true" val="0x18" />
+                    <volume15 visible="true" val="0x18" />
+                </VBC_ST_DG>
+            </NB1>
+            <NB2>
+                <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                </VBC_ADC2_DG>
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x18" />
+                    <volume2 visible="true" val="0x18" />
+                    <volume3 visible="true" val="0x18" />
+                    <volume4 visible="true" val="0x18" />
+                    <volume5 visible="true" val="0x18" />
+                    <volume6 visible="true" val="0x18" />
+                    <volume7 visible="true" val="0x18" />
+                    <volume8 visible="true" val="0x18" />
+                    <volume9 visible="true" val="0x18" />
+                    <volume10 visible="true" val="0x18" />
+                    <volume11 visible="true" val="0x18" />
+                    <volume12 visible="true" val="0x18" />
+                    <volume13 visible="true" val="0x18" />
+                    <volume14 visible="true" val="0x18" />
+                    <volume15 visible="true" val="0x18" />
+                </VBC_DAC1_DG>
+                <VBC_ST_DG ctl="VBC ST DG Set">
+                    <volume0 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x18" />
+                    <volume2 visible="true" val="0x18" />
+                    <volume3 visible="true" val="0x18" />
+                    <volume4 visible="true" val="0x18" />
+                    <volume5 visible="true" val="0x18" />
+                    <volume6 visible="true" val="0x18" />
+                    <volume7 visible="true" val="0x18" />
+                    <volume8 visible="true" val="0x18" />
+                    <volume9 visible="true" val="0x18" />
+                    <volume10 visible="true" val="0x18" />
+                    <volume11 visible="true" val="0x18" />
+                    <volume12 visible="true" val="0x18" />
+                    <volume13 visible="true" val="0x18" />
+                    <volume14 visible="true" val="0x18" />
+                    <volume15 visible="true" val="0x18" />
+                </VBC_ST_DG>
+            </NB2>
+            <WB1>
+                <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                </VBC_ADC2_DG>
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x18" />
+                    <volume2 visible="true" val="0x18" />
+                    <volume3 visible="true" val="0x18" />
+                    <volume4 visible="true" val="0x18" />
+                    <volume5 visible="true" val="0x18" />
+                    <volume6 visible="true" val="0x18" />
+                    <volume7 visible="true" val="0x18" />
+                    <volume8 visible="true" val="0x18" />
+                    <volume9 visible="true" val="0x18" />
+                    <volume10 visible="true" val="0x18" />
+                    <volume11 visible="true" val="0x18" />
+                    <volume12 visible="true" val="0x19" />
+                    <volume13 visible="true" val="0x18" />
+                    <volume14 visible="true" val="0x18" />
+                    <volume15 visible="true" val="0x18" />
+                </VBC_DAC1_DG>
+                <VBC_ST_DG ctl="VBC ST DG Set">
+                    <volume0 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x18" />
+                    <volume2 visible="true" val="0x18" />
+                    <volume3 visible="true" val="0x18" />
+                    <volume4 visible="true" val="0x18" />
+                    <volume5 visible="true" val="0x18" />
+                    <volume6 visible="true" val="0x18" />
+                    <volume7 visible="true" val="0x18" />
+                    <volume8 visible="true" val="0x18" />
+                    <volume9 visible="true" val="0x18" />
+                    <volume10 visible="true" val="0x18" />
+                    <volume11 visible="true" val="0x18" />
+                    <volume12 visible="true" val="0x18" />
+                    <volume13 visible="true" val="0x18" />
+                    <volume14 visible="true" val="0x18" />
+                    <volume15 visible="true" val="0x18" />
+                </VBC_ST_DG>
+            </WB1>
+            <WB2>
+                <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                </VBC_ADC2_DG>
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x18" />
+                    <volume2 visible="true" val="0x18" />
+                    <volume3 visible="true" val="0x18" />
+                    <volume4 visible="true" val="0x18" />
+                    <volume5 visible="true" val="0x18" />
+                    <volume6 visible="true" val="0x18" />
+                    <volume7 visible="true" val="0x18" />
+                    <volume8 visible="true" val="0x18" />
+                    <volume9 visible="true" val="0x18" />
+                    <volume10 visible="true" val="0x18" />
+                    <volume11 visible="true" val="0x18" />
+                    <volume12 visible="true" val="0x18" />
+                    <volume13 visible="true" val="0x18" />
+                    <volume14 visible="true" val="0x18" />
+                    <volume15 visible="true" val="0x18" />
+                </VBC_DAC1_DG>
+                <VBC_ST_DG ctl="VBC ST DG Set">
+                    <volume0 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x18" />
+                    <volume2 visible="true" val="0x18" />
+                    <volume3 visible="true" val="0x18" />
+                    <volume4 visible="true" val="0x18" />
+                    <volume5 visible="true" val="0x18" />
+                    <volume6 visible="true" val="0x18" />
+                    <volume7 visible="true" val="0x18" />
+                    <volume8 visible="true" val="0x18" />
+                    <volume9 visible="true" val="0x18" />
+                    <volume10 visible="true" val="0x18" />
+                    <volume11 visible="true" val="0x18" />
+                    <volume12 visible="true" val="0x18" />
+                    <volume13 visible="true" val="0x18" />
+                    <volume14 visible="true" val="0x18" />
+                    <volume15 visible="true" val="0x18" />
+                </VBC_ST_DG>
+            </WB2>
+            <SWB1>
+                <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                </VBC_ADC2_DG>
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x18" />
+                    <volume2 visible="true" val="0x18" />
+                    <volume3 visible="true" val="0x18" />
+                    <volume4 visible="true" val="0x18" />
+                    <volume5 visible="true" val="0x18" />
+                    <volume6 visible="true" val="0x18" />
+                    <volume7 visible="true" val="0x18" />
+                    <volume8 visible="true" val="0x18" />
+                    <volume9 visible="true" val="0x18" />
+                    <volume10 visible="true" val="0x18" />
+                    <volume11 visible="true" val="0x18" />
+                    <volume12 visible="true" val="0x18" />
+                    <volume13 visible="true" val="0x18" />
+                    <volume14 visible="true" val="0x18" />
+                    <volume15 visible="true" val="0x18" />
+                </VBC_DAC1_DG>
+                <VBC_ST_DG ctl="VBC ST DG Set">
+                    <volume0 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x18" />
+                    <volume2 visible="true" val="0x18" />
+                    <volume3 visible="true" val="0x18" />
+                    <volume4 visible="true" val="0x18" />
+                    <volume5 visible="true" val="0x18" />
+                    <volume6 visible="true" val="0x18" />
+                    <volume7 visible="true" val="0x18" />
+                    <volume8 visible="true" val="0x18" />
+                    <volume9 visible="true" val="0x18" />
+                    <volume10 visible="true" val="0x18" />
+                    <volume11 visible="true" val="0x18" />
+                    <volume12 visible="true" val="0x18" />
+                    <volume13 visible="true" val="0x18" />
+                    <volume14 visible="true" val="0x18" />
+                    <volume15 visible="true" val="0x18" />
+                </VBC_ST_DG>
+            </SWB1>
+            <FB1>
+                <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                </VBC_ADC2_DG>
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x21" />
+                    <volume2 visible="true" val="0x21" />
+                    <volume3 visible="true" val="0x21" />
+                    <volume4 visible="true" val="0x21" />
+                    <volume5 visible="true" val="0x21" />
+                    <volume6 visible="true" val="0x21" />
+                    <volume7 visible="true" val="0x21" />
+                    <volume8 visible="true" val="0x21" />
+                    <volume9 visible="true" val="0x21" />
+                    <volume10 visible="true" val="0x21" />
+                    <volume11 visible="true" val="0x21" />
+                    <volume12 visible="true" val="0x21" />
+                    <volume13 visible="true" val="0x21" />
+                    <volume14 visible="true" val="0x21" />
+                    <volume15 visible="true" val="0x21" />
+                </VBC_DAC1_DG>
+                <VBC_ST_DG ctl="VBC ST DG Set">
+                    <volume0 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x18" />
+                    <volume2 visible="true" val="0x18" />
+                    <volume3 visible="true" val="0x18" />
+                    <volume4 visible="true" val="0x18" />
+                    <volume5 visible="true" val="0x18" />
+                    <volume6 visible="true" val="0x18" />
+                    <volume7 visible="true" val="0x18" />
+                    <volume8 visible="true" val="0x18" />
+                    <volume9 visible="true" val="0x18" />
+                    <volume10 visible="true" val="0x18" />
+                    <volume11 visible="true" val="0x18" />
+                    <volume12 visible="true" val="0x18" />
+                    <volume13 visible="true" val="0x18" />
+                    <volume14 visible="true" val="0x18" />
+                    <volume15 visible="true" val="0x18" />
+                </VBC_ST_DG>
+            </FB1>
+            <VOIP1>
+                <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                </VBC_ADC2_DG>
+                <VBC_DAC1_DG ctl="VBC DAC0 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x18" />
+                    <volume2 visible="true" val="0x18" />
+                    <volume3 visible="true" val="0x18" />
+                    <volume4 visible="true" val="0x18" />
+                    <volume5 visible="true" val="0x18" />
+                    <volume6 visible="true" val="0x18" />
+                    <volume7 visible="true" val="0x18" />
+                    <volume8 visible="true" val="0x18" />
+                    <volume9 visible="true" val="0x18" />
+                    <volume10 visible="true" val="0x18" />
+                    <volume11 visible="true" val="0x18" />
+                    <volume12 visible="true" val="0x18" />
+                    <volume13 visible="true" val="0x18" />
+                    <volume14 visible="true" val="0x18" />
+                    <volume15 visible="true" val="0x18" />
+                </VBC_DAC1_DG>
+                <VBC_ST_DG ctl="VBC ST DG Set">
+                    <volume0 visible="true" val="0x18" />
+                    <volume1 visible="true" val="0x18" />
+                    <volume2 visible="true" val="0x18" />
+                    <volume3 visible="true" val="0x18" />
+                    <volume4 visible="true" val="0x18" />
+                    <volume5 visible="true" val="0x18" />
+                    <volume6 visible="true" val="0x18" />
+                    <volume7 visible="true" val="0x18" />
+                    <volume8 visible="true" val="0x18" />
+                    <volume9 visible="true" val="0x18" />
+                    <volume10 visible="true" val="0x18" />
+                    <volume11 visible="true" val="0x18" />
+                    <volume12 visible="true" val="0x18" />
+                    <volume13 visible="true" val="0x18" />
+                    <volume14 visible="true" val="0x18" />
+                    <volume15 visible="true" val="0x18" />
+                </VBC_ST_DG>
+            </VOIP1>
+        </HighVolumeMax>
         <Hac>
             <NB1>
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
@@ -2896,12 +3189,12 @@
         <Headset>
             <Playback>
                 <VBC_DAC0_DG ctl="VBC DAC0 DG Set">
-                    <volume0 visible="true" val="0x1a" />
+                    <volume0 visible="true" val="0x19" />
                 </VBC_DAC0_DG>
             </Playback>
             <Record>
                 <VBC_ADC0_DG ctl="VBC ADC0 DG Set">
-                    <volume0 visible="true" val="0x04" />
+                    <volume0 visible="true" val="0x18" />
                 </VBC_ADC0_DG>
             </Record>
             <UnprocessRecord>
@@ -2912,31 +3205,31 @@
             <FM>
                 <VBC_FM_DG ctl="VBC FM DG Set">
                     <volume0 visible="true" val="0x7f" />
-                    <volume1 visible="true" val="0x5e" />
-                    <volume2 visible="true" val="0x57" />
-                    <volume3 visible="true" val="0x51" />
-                    <volume4 visible="true" val="0x4c" />
-                    <volume5 visible="true" val="0x48" />
-                    <volume6 visible="true" val="0x45" />
-                    <volume7 visible="true" val="0x41" />
-                    <volume8 visible="true" val="0x3e" />
-                    <volume9 visible="true" val="0x3b" />
-                    <volume10 visible="true" val="0x39" />
-                    <volume11 visible="true" val="0x36" />
-                    <volume12 visible="true" val="0x33" />
-                    <volume13 visible="true" val="0x31" />
-                    <volume14 visible="true" val="0x2e" />
-                    <volume15 visible="true" val="0x2b" />
-                    <volume16 visible="true" val="0x28" />
-                    <volume17 visible="true" val="0x24" />
-                    <volume18 visible="true" val="0x22" />
-                    <volume19 visible="true" val="0x20" />
-                    <volume20 visible="true" val="0x1e" />
-                    <volume21 visible="true" val="0x1d" />
-                    <volume22 visible="true" val="0x1b" />
+                    <volume1 visible="true" val="0x51" />
+                    <volume2 visible="true" val="0x4d" />
+                    <volume3 visible="true" val="0x49" />
+                    <volume4 visible="true" val="0x44" />
+                    <volume5 visible="true" val="0x3f" />
+                    <volume6 visible="true" val="0x3a" />
+                    <volume7 visible="true" val="0x36" />
+                    <volume8 visible="true" val="0x31" />
+                    <volume9 visible="true" val="0x2d" />
+                    <volume10 visible="true" val="0x29" />
+                    <volume11 visible="true" val="0x25" />
+                    <volume12 visible="true" val="0x21" />
+                    <volume13 visible="true" val="0x1d" />
+                    <volume14 visible="true" val="0x19" />
+                    <volume15 visible="true" val="0x15" />
+                    <volume16 visible="true" val="0x18" />
+                    <volume17 visible="true" val="0x18" />
+                    <volume18 visible="true" val="0x18" />
+                    <volume19 visible="true" val="0x18" />
+                    <volume20 visible="true" val="0x18" />
+                    <volume21 visible="true" val="0x18" />
+                    <volume22 visible="true" val="0x18" />
                     <volume23 visible="true" val="0x18" />
-                    <volume24 visible="true" val="0x15" />
-                    <volume25 visible="true" val="0x13" />
+                    <volume24 visible="true" val="0x18" />
+                    <volume25 visible="true" val="0x18" />
                 </VBC_FM_DG>
                 <VBC_ADC3_DG ctl="VBC ADC3 DG Set">
                     <volume0 visible="true" val="0x13" />
@@ -2946,12 +3239,12 @@
         <Handsfree>
             <Playback>
                 <VBC_DAC0_DG ctl="VBC DAC0 DG Set">
-                    <volume0 visible="true" val="0x22" />
+                    <volume0 visible="true" val="0x18" />
                 </VBC_DAC0_DG>
             </Playback>
             <Record>
                 <VBC_ADC0_DG ctl="VBC ADC0 DG Set">
-                    <volume0 visible="true" val="0x07" />
+                    <volume0 visible="true" val="0x1a" />
                 </VBC_ADC0_DG>
             </Record>
             <UnprocessRecord>
@@ -2996,14 +3289,14 @@
         <Headfree>
             <Playback>
                 <VBC_DAC0_DG ctl="VBC DAC0 DG Set">
-                    <volume0 visible="true" val="0x23" />
+                    <volume0 visible="true" val="0x1c" />
                 </VBC_DAC0_DG>
             </Playback>
         </Headfree>
         <Handset>
             <Playback>
                 <VBC_DAC0_DG ctl="VBC DAC0 DG Set">
-                    <volume0 visible="true" val="0x1a" />
+                    <volume0 visible="true" val="0x19" />
                 </VBC_DAC0_DG>
             </Playback>
         </Handset>
@@ -3064,6 +3357,106 @@
                 </VBC_ADC3_DG>
             </FM>
         </TypeC_Digital>
+        <HighVolume_Playback>
+            <Playback>
+                <VBC_DAC0_DG ctl="VBC DAC0 DG Set">
+                    <volume0 visible="true" val="0x19" />
+                </VBC_DAC0_DG>
+            </Playback>
+            <Record>
+                <VBC_ADC0_DG ctl="VBC ADC0 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                </VBC_ADC0_DG>
+            </Record>
+            <UnprocessRecord>
+                <VBC_ADC0_DG ctl="VBC ADC0 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                </VBC_ADC0_DG>
+            </UnprocessRecord>
+            <FM>
+                <VBC_FM_DG ctl="VBC FM DG Set">
+                    <volume0 visible="true" val="0x7f" />
+                    <volume1 visible="true" val="0x4c" />
+                    <volume2 visible="true" val="0x4b" />
+                    <volume3 visible="true" val="0x4a" />
+                    <volume4 visible="true" val="0x49" />
+                    <volume5 visible="true" val="0x45" />
+                    <volume6 visible="true" val="0x43" />
+                    <volume7 visible="true" val="0x40" />
+                    <volume8 visible="true" val="0x3e" />
+                    <volume9 visible="true" val="0x3b" />
+                    <volume10 visible="true" val="0x3a" />
+                    <volume11 visible="true" val="0x38" />
+                    <volume12 visible="true" val="0x36" />
+                    <volume13 visible="true" val="0x33" />
+                    <volume14 visible="true" val="0x30" />
+                    <volume15 visible="true" val="0x2e" />
+                    <volume16 visible="true" val="0x2b" />
+                    <volume17 visible="true" val="0x28" />
+                    <volume18 visible="true" val="0x26" />
+                    <volume19 visible="true" val="0x23" />
+                    <volume20 visible="true" val="0x20" />
+                    <volume21 visible="true" val="0x1e" />
+                    <volume22 visible="true" val="0x1b" />
+                    <volume23 visible="true" val="0x19" />
+                    <volume24 visible="true" val="0x16" />
+                    <volume25 visible="true" val="0x13" />
+                </VBC_FM_DG>
+                <VBC_ADC3_DG ctl="VBC ADC3 DG Set">
+                    <volume0 visible="true" val="0x13" />
+                </VBC_ADC3_DG>
+            </FM>
+        </HighVolume_Playback>
+        <HighVolumeMax_Playback>
+            <Playback>
+                <VBC_DAC0_DG ctl="VBC DAC0 DG Set">
+                    <volume0 visible="true" val="0x19" />
+                </VBC_DAC0_DG>
+            </Playback>
+            <Record>
+                <VBC_ADC0_DG ctl="VBC ADC0 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                </VBC_ADC0_DG>
+            </Record>
+            <UnprocessRecord>
+                <VBC_ADC0_DG ctl="VBC ADC0 DG Set">
+                    <volume0 visible="true" val="0x18" />
+                </VBC_ADC0_DG>
+            </UnprocessRecord>
+            <FM>
+                <VBC_FM_DG ctl="VBC FM DG Set">
+                    <volume0 visible="true" val="0x7f" />
+                    <volume1 visible="true" val="0x4c" />
+                    <volume2 visible="true" val="0x4b" />
+                    <volume3 visible="true" val="0x4a" />
+                    <volume4 visible="true" val="0x49" />
+                    <volume5 visible="true" val="0x45" />
+                    <volume6 visible="true" val="0x43" />
+                    <volume7 visible="true" val="0x40" />
+                    <volume8 visible="true" val="0x3e" />
+                    <volume9 visible="true" val="0x3b" />
+                    <volume10 visible="true" val="0x3a" />
+                    <volume11 visible="true" val="0x38" />
+                    <volume12 visible="true" val="0x36" />
+                    <volume13 visible="true" val="0x33" />
+                    <volume14 visible="true" val="0x30" />
+                    <volume15 visible="true" val="0x2e" />
+                    <volume16 visible="true" val="0x2b" />
+                    <volume17 visible="true" val="0x28" />
+                    <volume18 visible="true" val="0x26" />
+                    <volume19 visible="true" val="0x23" />
+                    <volume20 visible="true" val="0x20" />
+                    <volume21 visible="true" val="0x1e" />
+                    <volume22 visible="true" val="0x1b" />
+                    <volume23 visible="true" val="0x19" />
+                    <volume24 visible="true" val="0x16" />
+                    <volume25 visible="true" val="0x13" />
+                </VBC_FM_DG>
+                <VBC_ADC3_DG ctl="VBC ADC3 DG Set">
+                    <volume0 visible="true" val="0x13" />
+                </VBC_ADC3_DG>
+            </FM>
+        </HighVolumeMax_Playback>
     </Music>
     <Loopback>
         <Handset>
@@ -3072,7 +3465,7 @@
                     <volume0 visible="true" val="0x18" />
                 </VBC_DAC1_DG>
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
-                    <volume0 visible="true" val="0x35" />
+                    <volume0 visible="true" val="0x1b" />
                 </VBC_ADC2_DG>
                 <VBC_ST_DG ctl="VBC ST DG Set">
                     <volume0 visible="true" val="0x18" />
@@ -3085,7 +3478,7 @@
                     <volume0 visible="true" val="0x18" />
                 </VBC_DAC1_DG>
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
-                    <volume0 visible="true" val="0x35" />
+                    <volume0 visible="true" val="0x18" />
                 </VBC_ADC2_DG>
                 <VBC_ST_DG ctl="VBC ST DG Set">
                     <volume0 visible="true" val="0x18" />
@@ -3098,7 +3491,7 @@
                     <volume0 visible="true" val="0x1a" />
                 </VBC_DAC1_DG>
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
-                    <volume0 visible="true" val="0x35" />
+                    <volume0 visible="true" val="0x18" />
                 </VBC_ADC2_DG>
                 <VBC_ST_DG ctl="VBC ST DG Set">
                     <volume0 visible="true" val="0x18" />
@@ -3111,7 +3504,7 @@
                     <volume0 visible="true" val="0x1a" />
                 </VBC_DAC1_DG>
                 <VBC_ADC2_DG ctl="VBC ADC2 DG Set">
-                    <volume0 visible="true" val="0x35" />
+                    <volume0 visible="true" val="0x18" />
                 </VBC_ADC2_DG>
                 <VBC_ST_DG ctl="VBC ST DG Set">
                     <volume0 visible="true" val="0x18" />

@@ -9,7 +9,3 @@ service vendor.stk /vendor/bin/netbox.sh stk
     user root
     disabled
     oneshot
-
-on boot
-     chown system /mnt/vendor/productinfo/imei_res
-     chmod 664 /mnt/vendor/productinfo/imei_res

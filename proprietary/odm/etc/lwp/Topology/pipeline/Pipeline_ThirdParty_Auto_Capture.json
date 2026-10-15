@@ -50,9 +50,19 @@
             "id": "cap_MFNR4"
         },
         {
+            "type": "MFNRNode",
+            "vendor": "SPRD",
+            "id": "cap_MFNR"
+        },
+        {
             "type": "HDR4Node",
             "vendor": "SPRD",
             "id": "cap_HDR"
+        },
+        {
+            "type": "HDRNode",
+            "vendor": "SPRD",
+            "id": "cap_HDR2"
         },
         {
             "type": "YNRCNRNode",
@@ -70,9 +80,9 @@
             "id": "cap_Jpeg"
         },
         {
-            "type": "VdBlurless4Node",
-            "vendor": "VD",
-            "id": "cap_VDBlurless"
+            "type": "TranAlgoPluginNode",
+            "vendor": "TRAN",
+            "id": "cap_TranAlgoPlugin"
         }
     ],
     "rootNodes": ["SourceNode0","SourceNode1","SourceNode2","SourceNode3"],
@@ -123,6 +133,16 @@
                 "port": "xts"
             },
             "to": {
+                "name": "cap_TranAlgoPlugin",
+                "port": "cap_in"
+            }
+        },
+        {
+            "from": {
+                "name": "cap_TranAlgoPlugin",
+                "port": "cap_out"
+            },
+            "to": {
                 "name": "cap_Jpeg",
                 "port": "in0"
             }
@@ -150,16 +170,16 @@
         {
             "from": {
                 "name": "cap_MF_router",
-                "port": "vdblurless"
+                "port": "mfnr"
             },
             "to": {
-                "name": "cap_VDBlurless",
+                "name": "cap_MFNR",
                 "port": "in0"
             }
         },
         {
             "from": {
-                "name": "cap_VDBlurless",
+                "name": "cap_MFNR",
                 "port": "out0"
             },
             "to": {
@@ -170,16 +190,16 @@
         {
             "from": {
                 "name": "cap_MF_router",
-                "port": "hdr"
+                "port": "hdr2"
             },
             "to": {
-                "name": "cap_HDR",
+                "name": "cap_HDR2",
                 "port": "in0"
             }
         },
         {
             "from": {
-                "name": "cap_HDR",
+                "name": "cap_HDR2",
                 "port": "out0"
             },
             "to": {
@@ -213,6 +233,16 @@
                 "port": "camera_go"
             },
             "to": {
+                "name": "cap_TranAlgoPlugin",
+                "port": "cap_in"
+            }
+        },
+        {
+            "from": {
+                "name": "cap_TranAlgoPlugin",
+                "port": "cap_out"
+            },
+            "to": {
                 "name": "cap_Jpeg",
                 "port": "in0"
             }
@@ -241,6 +271,16 @@
             "from": {
                 "name": "cap_FaceBeauty",
                 "port": "out0"
+            },
+            "to": {
+                "name": "cap_TranAlgoPlugin",
+                "port": "cap_in"
+            }
+        },
+        {
+            "from": {
+                "name": "cap_TranAlgoPlugin",
+                "port": "cap_out"
             },
             "to": {
                 "name": "cap_Jpeg",

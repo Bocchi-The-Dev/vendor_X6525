@@ -1,4 +1,8 @@
 <?xml version="1.0"?>
+<!--
+     SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+     SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
+-->
 <!-- Subsystem log settings -->
 <subsys_settings>
 
@@ -50,7 +54,7 @@
     <wifi_bt>off</wifi_bt>
     <wifi_bt_level>0</wifi_bt_level>
     <gnss>off</gnss>
-    <wcn_reset_state>reset_dump</wcn_reset_state>
+    <wcn_reset_state>reset</wcn_reset_state>
     <storage>
       <ext_cap>0</ext_cap>
       <int_cap>512</int_cap>

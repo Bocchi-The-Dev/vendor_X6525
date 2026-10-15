@@ -1,4 +1,8 @@
 <dsp_vbc set="DSP VBC Profile Select" upload="DSP VBC Profile Update" time="2022-03-03 18:39:26" num_mode="0x4f" struct_size="0x6c4">
+<!--
+     SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+     SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
+-->
     <Audio>
         <Handset>
             <NB1 mode="0">

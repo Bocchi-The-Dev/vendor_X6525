@@ -26,7 +26,7 @@
 			"data_major": 1,
 			"data_minor": 0,
 			"inputs": [ "cin0"],
-			"outputs": [ "flash", "single", "hdr", "hdr2", "mfnr", "mfsr", "vdblurless"]
+			"outputs": [ "flash", "single", "hdr", "hdr2", "mfnr", "mfsr","tranMultiFrame"]
         },
 		{
 			"type": "JpegNode",
@@ -360,19 +360,6 @@
 			"outputs": [ "out0" ]
 		},
 		{
-            "type": "PolarrRenderNode",
-            "vendor": "SPRD",
-			"node_major": 1,
-			"node_minor": 0,
-			"data_major": 1,
-			"data_minor": 0,
-			"inputs": [ "in0" ],
-			"outputs": [ "out0" ],
-			"priv": {
-				"so_name": ["libPolarrRender.so"]
-			}
-		},
-		{
             "type": "GestureNode",
             "vendor": "SPRD",
 			"node_major": 1,
@@ -434,25 +421,10 @@
 			"data_minor": 0,
 			"inputs": [ "in0" ],
 			"outputs": [ "out0" ]
-		},
+        },
 		{
-			"type": "ArcHDRNode",
-			"vendor": "SPRD",
-			"node_major": 1,
-			"node_minor": 0,
-			"data_major": 1,
-			"data_minor": 0,
-			"inputs": [ "in0" ],
-			"outputs": [ "out0" ],
-			"priv": {
-				"so_name": ["libarcsoft_hdr_denoise_api.so",
-				            "libarcsoft_high_dynamic_range.so",
-						    "libarcsoft_smart_denoise.so"]
-			}
-		},
-		{
-            "type": "ArcYUVNightNode",
-            "vendor": "SPRD",
+		    "type": "CalculateSharpnessNode",
+		    "vendor": "SPRD",
 			"node_major": 1,
 			"node_minor": 0,
 			"data_major": 1,
@@ -461,52 +433,14 @@
 			"outputs": [ "out0" ]
 		},
 		{
-			"type": "ArcCHDRNode",
-			"vendor": "SPRD",
+            "type": "TranAlgoPluginNode",
+            "vendor": "TRAN",
 			"node_major": 1,
 			"node_minor": 0,
 			"data_major": 1,
 			"data_minor": 0,
-			"inputs": [ "in0" ],
-			"outputs": [ "out0" ],
-			"priv": {
-				"so_name": ["libarcsoft_hdr_couple_api.so",
-				            "libarcsoft_high_dynamic_range_couple.so",
-						    "libarcsoft_smart_denoise.so"]
-			}
-		},
-		{
-            "type": "VdBlurless4Node",
-            "vendor": "VD",
-			"node_major": 1,
-			"node_minor": 0,
-			"data_major": 1,
-			"data_minor": 0,
-			"inputs": [ "in0" ],
-			"outputs": [ "out0" ]
-		},
-		{
-            "type": "VdSuperphotoNode",
-            "vendor": "VD",
-			"node_major": 1,
-			"node_minor": 0,
-			"data_major": 1,
-			"data_minor": 0,
-			"inputs": [ "in0" ],
-			"outputs": [ "out0" ]
-		},
-		{
-            "type": "VdUpScaleNode",
-            "vendor": "VD",
-			"node_major": 1,
-			"node_minor": 0,
-			"data_major": 1,
-			"data_minor": 0,
-			"inputs": [ "in0" ],
-			"outputs": [ "out0" ],
-			"priv": {
-				"so_name": ["libVDUpScale.so"]
-			}
+			"inputs": [ "pre_in","pre_async_in","rec_in","cap_in","multi_cap_in" ],
+			"outputs": [ "pre_out","pre_async_out","rec_out","cap_out","multi_cap_out" ]
 		}
     ]
 }

@@ -1,4 +1,4 @@
-# device/sprd/qogirl6/ums9230_hulk/module/bsp/md.rc
+# device/sprd/qogirl6/X6525/module/bsp/md.rc
 on boot
      chmod 664 /sys/devices/virtual/input/input5/tcs3430_als_x
      chmod 664 /sys/devices/virtual/input/input5/tcs3430_als_y
@@ -16,6 +16,19 @@ on boot
      chown system system /dev/stmvl53l0_ranging
 
 # device/sprd/mpool/product/soc/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
+
+# this main.rc is all platform rc will be used by android build system.
+# this main.rc will be compiled to vendor/etc/init/init.md.rc
+
+# create 777 folder in prodnv; prodnv is a partition that is not affected by factory reset in unisoc.
+on late-fs
+    mkdir /mnt/vendor/productinfo/finstatus 0777 root root
+    chmod 0777 /mnt/vendor/productinfo/finstatus/finstatus.prop
+    mkdir /mnt/vendor/productinfo/sarflag 0777 root root
+    chmod 0777 /mnt/vendor/productinfo/sarflag/sarflag.prop
+
 on early-init
     chmod 644 /sys/devices/soc0/soc_manufacturer
     chmod 644 /sys/devices/soc0/soc_model
@@ -34,6 +47,8 @@ service create_splloader_dual_slot_byname_path /vendor/bin/create_splloader_dual
     oneshot
 
 # device/sprd/mpool/module/vendor/gpu/natt/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on early-init
     setprop ro.hardware.egl "mali"
 
@@ -41,6 +56,8 @@ on post-fs
     #setprop ro.kernel.qemu 1
     #setprop ro.kernel.qemu.gles 0
 # device/sprd/mpool/module/vendor/bsp/ko/7sreset/mfeature/kernel/kernel5.4/msoc/qogirl6/qogirl6.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on boot
 	chown system system /sys/bus/platform/devices/64200000.spi:pmic@0:hw-reset@1bc0/hard_mode
 
@@ -51,11 +68,15 @@ on property:persist.vendor.eng.reset=1
 	write /sys/bus/platform/devices/64200000.spi:pmic@0:hw-reset@1bc0/hard_mode 1
 
 # device/sprd/mpool/module/vendor/bsp/uniber/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 service uniber /vendor/bin/uniber -f /vendor/etc/uniber.conf
     class main
     user root
     group root
 # device/sprd/mpool/module/vendor/audio/msoc/qogirl6/qogirl6.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on post-fs-data
     mkdir /data/vendor/local 0751 root root
     mkdir /data/vendor/local/media 0770 audioserver system
@@ -66,23 +87,20 @@ on boot
     chown audioserver audio /proc/asound/sprdphonesc2730/asoc-sprd-debug
     chmod 660 /proc/asound/sprdphonesc2730/asoc-sprd-debug
 # device/sprd/mpool/module/vendor/camera/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on boot
     chmod 660 /sys/devices/virtual/misc/sprd_sensor/camera_sensor_name
     chown cameraserver system /sys/devices/virtual/misc/sprd_sensor/camera_sensor_name
-    chmod 660 /sys/devices/virtual/misc/sprd_sensor/camera_sensor_SN
-    chown cameraserver system /sys/devices/virtual/misc/sprd_sensor/camera_sensor_SN
-    chmod 660 /sys/devices/virtual/misc/sprd_sensor/vga_sensor_bv_value
-    chown cameraserver system /sys/devices/virtual/misc/sprd_sensor/vga_sensor_bv_value
     chown cameraserver system /sys/devices/virtual/misc/sprd_flash/test
     chmod 660 /sys/devices/virtual/misc/sprd_flash/test
     chmod 660 /sys/class/devfreq/isp-dvfs/isp_governor/set_work_freq
     chown cameraserver system /sys/class/devfreq/isp-dvfs/isp_governor/set_work_freq
-    mkdir /data/vendor/cameraserver 0777 cameraserver cameraserver
 
 on post-fs-data
     mkdir /data/vendor/local/otpdata 0777 system root
     mkdir /mnt/vendor/productinfo/otpdata 0777 system root
-    mkdir /data/vendor/cameraserver 0777 cameraserver cameraserver
+    mkdir /data/vendor/cameraserver 0700 cameraserver cameraserver
     mkdir /data/vendor/icap 0777 cameraserver cameraserver
     mkdir /data/vendor/cameraserver/ips 0777 cameraserver cameraserver
     mkdir /data/vendor/cameraserver/multicamera 0777 cameraserver cameraserver
@@ -92,11 +110,22 @@ on post-fs-data
     mkdir /data/vendor/cameraserver/ips/CppNode 0777 cameraserver cameraserver
     mkdir /data/vendor/cameraserver/ips/lwpdump 0777 cameraserver cameraserver
     mkdir /data/vendor/videodebug 0777 cameraserver cameraserver
+#ITD: Add watermark By Camera Drv Start
+    mkdir /data/vendor/camera_watermark 0777 cameraserver cameraserver
+#ITD: Add watermark By Camera Drv end
+
 
 #modify permission for flashlight attributes file
     chown cameraserver system /sys/devices/virtual/misc/sprd_flash/test
     chmod 660 /sys/devices/virtual/misc/sprd_flash/test
+#ITD: Add watermark By Camera Drv Start
+on property:sys.boot_completed=1
+    chown system system /data/vendor/camera_watermark/watermark.nv21
+    chmod 0777 /data/vendor/camera_watermark/watermark.nv21
+#ITD: Add watermark By Camera Drv end
 # device/sprd/mpool/module/vendor/display/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on early-init
     setprop ro.hardware.enhance "unisoc"
 
@@ -114,20 +143,19 @@ on early-boot
     chmod 0664 /sys/class/display/dispc0/irq_unregister
     chmod 0664 /sys/class/display/panel0/esd_check_enable
     chmod 0664 /sys/class/backlight/sprd_backlight/brightness
-    chmod 0666 /sys/class/display/panel0/cabc_private
-    chmod 0666 /sys/class/display/panel0/tp_gesture_private
+    chmod 666 /sys/class/display/dsi/dpms_mode
     chown cameraserver system /sys/class/display/dispc0/bg_color
     chown cameraserver system /sys/class/display/dispc0/refresh
     chown cameraserver system /sys/class/display/dispc0/disable_flip
     chown system system /sys/class/backlight/sprd_backlight/brightness
-    chown system system /sys/class/display/panel0/tp_gesture_private
-    chown system system /sys/class/display/panel0/cabc_private
     chown system system /sys/class/display/dphy0/hop
     chown system system /sys/class/display/dphy0/ssc
     chown system system /sys/class/display/panel0/name
     chown system system /sys/class/display/panel0/resolution
     chown system system /sys/class/display/panel0/esd_check_enable
+    chown system system /sys/class/display/dsi/dpms_mode
     chown system system /sys/class/display/dispc0/vsync_rate_report
+    chown graphics system /sys/class/display/dsi/dpms_mode
     chown system system /sys/class/display/dispc0/disable_flip
     chown system system /sys/class/display/dispc0/dpu_version
     chown system system /sys/class/display/dispc0/irq_register
@@ -171,6 +199,8 @@ on fs
     chmod 666 /dev/adf-overlay-engine0.0
 
 # device/sprd/mpool/module/vendor/display/msoc/qogirl6/qogirl6.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on early-boot
     chmod 0660 /sys/class/display/dphy0/hop
     chmod 0660 /sys/class/display/dphy0/ssc
@@ -180,6 +210,7 @@ on early-boot
     chmod 0660 /sys/class/display/dispc0/refresh
     chmod 0660 /sys/class/display/dispc0/disable_flip
     chmod 0664 /sys/class/backlight/sprd_backlight/brightness
+    chmod 0666 /sys/class/display/panel0/hbm
 
     chown system system /sys/class/display/dphy0/hop
     chown system system /sys/class/display/dphy0/ssc
@@ -197,6 +228,7 @@ on early-boot
     chown system system /sys/devices/sprd-adf/dispc0/dynamic_mipi_clk
     chown system system /dev/sprd_bm
     chown system system /dev/dmc_mpu
+
 
     chmod 664 /sys/class/display/dispc0/PQ/slp
     chmod 664 /sys/class/display/dispc0/PQ/cm
@@ -243,6 +275,8 @@ on early-boot
 on boot
 
 # device/sprd/mpool/module/vendor/modem/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on early-boot
 #FOR Cproc Driver
     chmod 660 /proc/cptl/wdtirq
@@ -337,10 +371,14 @@ on early-boot
     chown system root /sys/kernel/debug/sipc/smsg
     chown system system /sys/devices/platform/soc/soc:ipa-apb/soc:ipa-apb:sipa-dele/sipa_dele_reset
 # device/sprd/mpool/module/vendor/security/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on early-boot
     # Update dm-verity state and set partition.*.verified properties
     verity_update_state
 # device/sprd/mpool/module/vendor/thermal/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on boot
     mkdir /data/vendor/thermald 0770 system system
     chown system system /data/vendor/thermald
@@ -349,9 +387,11 @@ on boot
     chmod 0644 /sys/class/backlight/sprd_backlight/max_brightness
     chmod 0644 /sys/class/display/backlight/max_brightness
 # device/sprd/mpool/module/vendor/thermal/msoc/qogirl6/mfeature/kernel/kernel5.4/kernel5.4.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on boot
-	chown system system /sys/class/thermal/thermal_zone2/trip_point_0_temp
-	chown system system /sys/class/thermal/thermal_zone2/trip_point_1_temp
+	chown system system /sys/class/thermal/thermal_zone3/trip_point_0_temp
+	chown system system /sys/class/thermal/thermal_zone3/trip_point_1_temp
 
 	chown system system /sys/class/thermal/cooling_device2/min_core_num
 	chown system system /sys/class/thermal/cooling_device2/min_freq
@@ -360,20 +400,22 @@ on boot
 	chown system system /sys/class/thermal/cooling_device3/min_freq
 	chown system system /sys/class/thermal/cooling_device3/max_ctrl_temp
 
-	chown system system /sys/class/thermal/thermal_zone2/policy
-	chmod 660 /sys/class/thermal/thermal_zone2/policy
-	write /sys/class/thermal/thermal_zone2/policy "power_allocator"
+	chown system system /sys/class/thermal/thermal_zone3/policy
+	chmod 660 /sys/class/thermal/thermal_zone3/policy
+	write /sys/class/thermal/thermal_zone3/policy "power_allocator"
 
 	#for ipa of EngineerMode
-	chown system system /sys/class/thermal/thermal_zone2/thm_enable
-	chmod 660 /sys/class/thermal/thermal_zone2/thm_enable
+	chown system system /sys/class/thermal/thermal_zone3/thm_enable
+	chmod 660 /sys/class/thermal/thermal_zone3/thm_enable
 
 on property:persist.sys.thermal.ipa=0
-	write /sys/class/thermal/thermal_zone2/thm_enable 0
+	write /sys/class/thermal/thermal_zone3/thm_enable 0
 
 on property:persist.sys.thermal.ipa=1
-	write /sys/class/thermal/thermal_zone2/thm_enable 1
+	write /sys/class/thermal/thermal_zone3/thm_enable 1
 # device/sprd/mpool/module/vendor/gpu/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 # hwui cache adapter ram size
 on property:ro.vendor.ramsize=512M
     setprop ro.vendor.hwui.texture_cache_size 36
@@ -390,10 +432,14 @@ on property:ro.vendor.ramsize=3072M
 on property:ro.vendor.ramsize=4096M
     setprop ro.vendor.hwui.texture_cache_size 72
 # device/sprd/mpool/module/vendor/media/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on post-fs-data
     mkdir /mnt/vendor/enhance 0771 system system
     mkdir /data/vendor/mediacodec 0770 mediacodec mediacodec
 # device/sprd/mpool/module/vendor/memory/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on property:vendor.modem.sp-boot=1
     # for devfreq ddr, after cm4 boot to setprop vendor.modem.ddr-dvfs
     chmod 660 /sys/class/devfreq/scene-frequency/sprd-governor/auto_dfs_on_off
@@ -408,6 +454,8 @@ on property:vendor.modem.sp-boot=1
     chown cameraserver system /sys/class/devfreq/scene-frequency/sprd-governor/scene_freq_set
 # device/sprd/mpool/module/vendor/memory/lmkd/main.rc
 # device/sprd/mpool/module/vendor/power/battery/battery.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on post-fs-data
     mkdir /mnt/vendor/battery 0771 system root
     mkdir /mnt/vendor/battery/calibration_data 0770 system root
@@ -440,36 +488,17 @@ on early-boot
     chmod 660 /sys/class/power_supply/battery/input_current_limit
     chmod 660 /sys/class/power_supply/battery/constant_charge_current
 # device/sprd/mpool/module/vendor/power/charge/charge.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on charger
     load_persist_props
 
 on post-fs-data
     mkdir /mnt/vendor/battery 0771 system root
     mkdir /mnt/vendor/battery/calibration_data 0770 system root
-
-on boot
-    chown system system /sys/class/oplus_chg/battery/lcd_mode
-    chown system system /sys/class/oplus_chg/battery/cool_down
-    chown system system /sys/class/oplus_chg/battery/call_mode
-    chown system system /sys/class/oplus_chg/battery/mmi_charging_enable
-    chown system system /sys/class/oplus_chg/battery/em_mode
-    chown system system /sys/class/oplus_chg/battery/normal_current_now
-    chown system system /sys/class/oplus_chg/battery/normal_cool_down
-    chmod 0664 /sys/class/oplus_chg/battery/lcd_mode
-    chmod 0664 /sys/class/oplus_chg/battery/cool_down
-    chmod 0664 /sys/class/oplus_chg/battery/call_mode
-    chmod 0664 /sys/class/oplus_chg/battery/mmi_charging_enable
-    chmod 0664 /sys/class/oplus_chg/battery/em_mode
-    chmod 0666 /sys/class/power_supply/battery/current_now
-    chmod 0664 /sys/class/oplus_chg/battery/normal_current_now
-    chmod 0664 /sys/class/oplus_chg/battery/normal_cool_down
-
-on property:persist.vendor.otg.switch=true
-    write /sys/class/oplus_chg/usb/otg_switch 1
-
-on property:persist.vendor.otg.switch=false
-    write /sys/class/oplus_chg/usb/otg_switch 0
 # device/sprd/mpool/module/vendor/power/pmic/pmic.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on early-boot
     chmod 660 /proc/pmic/stop
     chmod 660 /proc/pmic/start
@@ -489,6 +518,8 @@ on early-boot
     chown system root /proc/pmic/ldinfo
 # device/sprd/mpool/module/vendor/sensor/mfeature/kernel/kernel5.4/kernel5.4.rc
 # device/sprd/mpool/module/vendor/sensor/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on early-boot
     chown system root /sys/bus/iio/devices/trigger0/name
     chown system root /sys/class/sprd_sensorhub/sensor_hub/iio/buffer
@@ -526,12 +557,18 @@ on post-fs-data
     chown system root /mnt/vendor/productinfo/sensor_calibration_data/mag
     chown system root /mnt/vendor/productinfo/sensor_calibration_data/gyro
     chown system root /mnt/vendor/productinfo/sensor_calibration_data/light
+    chown system root /mnt/vendor/productinfo/sensor_calibration_data/als_cali
     chown system root /mnt/vendor/productinfo/sensor_calibration_data/proximity
+    chown system root /mnt/vendor/productinfo/sensor_calibration_data/ps_cali
+    chown system system /sys/class/sprd_sensorhub/sensor_hub/nv_cali_data_download
     chmod 660 /mnt/vendor/productinfo/sensor_calibration_data/acc
     chmod 660 /mnt/vendor/productinfo/sensor_calibration_data/mag
     chmod 660 /mnt/vendor/productinfo/sensor_calibration_data/gyro
     chmod 660 /mnt/vendor/productinfo/sensor_calibration_data/light
+    chmod 660 /mnt/vendor/productinfo/sensor_calibration_data/als_cali
     chmod 660 /mnt/vendor/productinfo/sensor_calibration_data/proximity
+    chmod 660 /mnt/vendor/productinfo/sensor_calibration_data/ps_cali
+    chmod 666 /sys/class/sprd_sensorhub/sensor_hub/nv_cali_data_download
 
 
 on cali-fs
@@ -571,14 +608,20 @@ on cali-start
     chown system root /mnt/vendor/productinfo/sensor_calibration_data/mag
     chown system root /mnt/vendor/productinfo/sensor_calibration_data/gyro
     chown system root /mnt/vendor/productinfo/sensor_calibration_data/light
+    chown system root /mnt/vendor/productinfo/sensor_calibration_data/als_cali
     chown system root /mnt/vendor/productinfo/sensor_calibration_data/proximity
+    chown system root /mnt/vendor/productinfo/sensor_calibration_data/ps_cali
     chmod 660 /mnt/vendor/productinfo/sensor_calibration_data/acc
     chmod 660 /mnt/vendor/productinfo/sensor_calibration_data/mag
     chmod 660 /mnt/vendor/productinfo/sensor_calibration_data/gyro
     chmod 660 /mnt/vendor/productinfo/sensor_calibration_data/light
+    chmod 660 /mnt/vendor/productinfo/sensor_calibration_data/als_cali
     chmod 660 /mnt/vendor/productinfo/sensor_calibration_data/proximity
+    chmod 660 /mnt/vendor/productinfo/sensor_calibration_data/ps_cali
     start vendor.sensors-hal-1-0
 # device/sprd/mpool/module/vendor/light/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on boot
   wait /sys/class/leds/sc27xx:red/brightness
   wait /sys/class/leds/sc27xx:green/brightness
@@ -601,6 +644,8 @@ on boot
   chown root system /sys/class/leds/sc27xx:blue/trigger
 
 # device/sprd/mpool/module/vendor/usb/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on init
 # SPRD: add for OTG usb disk @{
     mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
@@ -608,10 +653,14 @@ on init
     symlink /storage/usbdisk /mnt/usbdisk
 # @}
 # device/sprd/mpool/module/vendor/wcn/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on post-fs-data
     mkdir /mnt/vendor/wcn 0771 system root
 
 # device/sprd/mpool/module/vendor/wcn/gnss/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on post-fs-data
 #add gnss dir
     mkdir /data/vendor/gnss/ 0776 system system
@@ -644,12 +693,26 @@ on post-fs-data
     chown system system /mnt/vendor/txdata.txt
     chmod 666 /data/vendor/gnss/FlashCfg.cg
 
+on boot
+    wait /sys/class/misc/gnss_common_ctl/gnss_power_enable
+    wait /sys/class/misc/gnss_common_ctl/gnss_dump
+    wait /sys/class/misc/gnss_common_ctl/gnss_subsys
+
+    chmod 220 /sys/class/misc/gnss_common_ctl/gnss_power_enable
+    chmod 660 /sys/class/misc/gnss_common_ctl/gnss_dump
+    chmod 660 /sys/class/misc/gnss_common_ctl/gnss_subsys
+    chown system system /sys/class/misc/gnss_common_ctl/gnss_power_enable
+    chown system system /sys/class/misc/gnss_common_ctl/gnss_dump
+    chown system system /sys/class/misc/gnss_common_ctl/gnss_subsys
+
 
 service gpsd /vendor/bin/gpsd
     class core
     user system
     group gps system shell inet net_raw wifi
 # device/sprd/mpool/module/vendor/wcn/wifi/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 # Wi-Fi
 on post-fs-data
     mkdir /data/vendor/wifi 0770 wifi wifi
@@ -682,10 +745,14 @@ service vendor.wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     disabled
     oneshot
 # device/sprd/mpool/module/vendor/ts/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on boot
     chmod 664 /sys/touchscreen/ts_suspend
     chown root system /sys/touchscreen/ts_suspend
 # device/sprd/mpool/module/vendor/performance/mfeature/kernel/kernel5.4/kernel5.4.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on init
 	# EAS uclamp interfaces
 	#
@@ -721,6 +788,8 @@ on init
 on property:sys.boot_completed=1
 	write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
 # device/sprd/mpool/module/vendor/performance/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on boot
     chown media system /sys/kernel/hmp/boost
     chown system system /sys/kernel/hmp/boostpulse
@@ -763,6 +832,8 @@ on early-boot
     chown system system /sys/devices/system/cpu/cpufreq/policy4/scaling_setspeed
     chmod 664 /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
 # device/sprd/mpool/module/vendor/performance/msoc/qogirl6/mfeature/kernel/kernel5.4/kernel5.4.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on late-init
     #setup scheduler parameters
     write /dev/cpuctl/top-app/cpu.uclamp.min	15
@@ -775,10 +846,14 @@ on property:sys.boot_completed=1
     write /dev/cpuset/background/cpus 0-3
     write /dev/cpuset/system-background/cpus 0-3
 # device/sprd/mpool/module/vendor/app/settings/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on post-fs
     chmod 0775 /mnt/vendor
     chown system system /mnt/vendor
 # device/sprd/mpool/module/vendor/debug/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on boot
 #for sysdump
     chown system system /proc/sprd_sysdump
@@ -808,20 +883,9 @@ service bugreport /system/bin/dumpstate -d -p -z -B \
     disabled
     oneshot
 
-#for logcat2kmsg
-service logcat2kmsg /system/bin/logcat -f /dev/kmsg
-    # class core
-    class main
-    user root
-    group log
-    disabled
-
-on property:persist.vendor.logcat2kmsg=true
-    start logcat2kmsg
-
-on property:persist.vendor.logcat2kmsg=false
-    stop logcat2kmsg
 # device/sprd/mpool/module/vendor/engpc/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on post-fs-data
 #modify permission for voicetrigger dev
     chown system  audio /dev/rt5512
@@ -834,6 +898,8 @@ on post-fs-data
     mkdir /data/vendor/local/englog 0777
 
 # device/sprd/mpool/module/vendor/partition/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on fs
     mount_all /vendor/etc/fstab.${ro.hardware} --early
 
@@ -843,6 +909,8 @@ on late-fs
     mount_all /vendor/etc/fstab.${ro.hardware} --late
 
 # device/sprd/mpool/module/vendor/net/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on early-init
     #set MEMLOCK resource limit 8M
     setrlimit 8 0x7fffff 0x7fffff
@@ -854,8 +922,9 @@ on boot
     write /proc/sys/net/core/wmem_max 4194304
     write /proc/sys/net/core/wmem_default 2097152
     write /proc/sys/net/ipv4/tcp_limit_output_bytes 1310720
-    write /proc/sys/net/ipv4/tcp_mem  "42318 56426 84636"
 # device/sprd/mpool/module/vendor/log/ylog/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on early-init
     mkdir /dev/socket/ylog 0755 system system
     mkdir /dev/socket/ylog_lite 0755 system system
@@ -890,7 +959,9 @@ on property:persist.vendor.ylog_lite.enabled=1
 
 on property:persist.vendor.ylog_lite.enabled=0
     stop vendor.ylog_lite
-# device/sprd/mpool/module/vendor/art/mversion/full/full.rc
+# device/sprd/mpool/module/vendor/art/mversion/go/go.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on early-init && property:ro.boot.ddrsize.range="[0,512)"
    setprop dalvik.vm.foreground-heap-growth-multiplier 1.0
    setprop dalvik.vm.heapstartsize 5m
@@ -898,6 +969,7 @@ on early-init && property:ro.boot.ddrsize.range="[0,512)"
    setprop dalvik.vm.heaptargetutilization 0.75
    setprop dalvik.vm.heapminfree 512k
    setprop dalvik.vm.heapmaxfree 2m
+   setprop dalvik.vm.madvise-random true
 
 on early-init && property:ro.boot.ddrsize.range="[512,1024)"
    setprop dalvik.vm.foreground-heap-growth-multiplier 1.0
@@ -907,59 +979,76 @@ on early-init && property:ro.boot.ddrsize.range="[512,1024)"
    setprop dalvik.vm.heaptargetutilization 0.75
    setprop dalvik.vm.heapminfree 512k
    setprop dalvik.vm.heapmaxfree 2m
+   setprop dalvik.vm.madvise-random true
 
 on early-init && property:ro.boot.ddrsize.range="[1024,2048)"
+   setprop dalvik.vm.foreground-heap-growth-multiplier 2.0
    setprop dalvik.vm.heapstartsize 8m
    setprop dalvik.vm.heapgrowthlimit 128m
    setprop dalvik.vm.heapsize 256m
    setprop dalvik.vm.heaptargetutilization 0.75
    setprop dalvik.vm.heapminfree 512k
    setprop dalvik.vm.heapmaxfree 8m
+   setprop dalvik.vm.madvise-random true
 
+# According to the settings of the dalvik.vm.heap* properties in the go_defaults_common.prop file,
+# the dalvik.vm.heap* properties of the go version are configured as "[1024,2048)".
 on early-init && property:ro.boot.ddrsize.range="[2048,3072)"
+   setprop dalvik.vm.foreground-heap-growth-multiplier 2.0
    setprop dalvik.vm.heapstartsize 8m
-   setprop dalvik.vm.heapgrowthlimit 192m
-   setprop dalvik.vm.heapsize 512m
+   setprop dalvik.vm.heapgrowthlimit 128m
+   setprop dalvik.vm.heapsize 256m
    setprop dalvik.vm.heaptargetutilization 0.75
    setprop dalvik.vm.heapminfree 512k
    setprop dalvik.vm.heapmaxfree 8m
+   setprop dalvik.vm.madvise-random true
 
 on early-init && property:ro.boot.ddrsize.range="[3072,4096)"
-   setprop dalvik.vm.heapstartsize 4m
-   setprop dalvik.vm.heapgrowthlimit 192m
-   setprop dalvik.vm.heapsize 512m
+   setprop dalvik.vm.foreground-heap-growth-multiplier 2.0
+   setprop dalvik.vm.heapstartsize 8m
+   setprop dalvik.vm.heapgrowthlimit 128m
+   setprop dalvik.vm.heapsize 256m
    setprop dalvik.vm.heaptargetutilization 0.75
-   setprop dalvik.vm.heapminfree 8m
-   setprop dalvik.vm.heapmaxfree 16m
+   setprop dalvik.vm.heapminfree 512k
+   setprop dalvik.vm.heapmaxfree 8m
+   setprop dalvik.vm.madvise-random true
 
 on early-init && property:ro.boot.ddrsize.range="[4096,5120)"
+   setprop dalvik.vm.foreground-heap-growth-multiplier 2.0
    setprop dalvik.vm.heapstartsize 8m
-   setprop dalvik.vm.heapgrowthlimit 256m
-   setprop dalvik.vm.heapsize 512m
-   setprop dalvik.vm.heaptargetutilization 0.6
-   setprop dalvik.vm.heapminfree 8m
-   setprop dalvik.vm.heapmaxfree 16m
+   setprop dalvik.vm.heapgrowthlimit 128m
+   setprop dalvik.vm.heapsize 256m
+   setprop dalvik.vm.heaptargetutilization 0.75
+   setprop dalvik.vm.heapminfree 512k
+   setprop dalvik.vm.heapmaxfree 8m
+   setprop dalvik.vm.madvise-random true
 
 on early-init && property:ro.boot.ddrsize.range="[5120,6144)"
+   setprop dalvik.vm.foreground-heap-growth-multiplier 2.0
    setprop dalvik.vm.heapstartsize 8m
-   setprop dalvik.vm.heapgrowthlimit 192m
-   setprop dalvik.vm.heapsize 512m
-   setprop dalvik.vm.heaptargetutilization 0.6
-   setprop dalvik.vm.heapminfree 8m
-   setprop dalvik.vm.heapmaxfree 16m
+   setprop dalvik.vm.heapgrowthlimit 128m
+   setprop dalvik.vm.heapsize 256m
+   setprop dalvik.vm.heaptargetutilization 0.75
+   setprop dalvik.vm.heapminfree 512k
+   setprop dalvik.vm.heapmaxfree 8m
+   setprop dalvik.vm.madvise-random true
 
 on early-init && property:ro.boot.ddrsize.range="[6144,)"
-   setprop dalvik.vm.heapstartsize 16m
-   setprop dalvik.vm.heapgrowthlimit 384m
-   setprop dalvik.vm.heapsize 512m
-   setprop dalvik.vm.heaptargetutilization 0.5
-   setprop dalvik.vm.heapminfree 8m
-   setprop dalvik.vm.heapmaxfree 32m
+   setprop dalvik.vm.foreground-heap-growth-multiplier 2.0
+   setprop dalvik.vm.heapstartsize 8m
+   setprop dalvik.vm.heapgrowthlimit 128m
+   setprop dalvik.vm.heapsize 256m
+   setprop dalvik.vm.heaptargetutilization 0.75
+   setprop dalvik.vm.heapminfree 512k
+   setprop dalvik.vm.heapmaxfree 8m
+   setprop dalvik.vm.madvise-random true
 
 #bug1946073 enlarge suspend timeout for huge iowait
 on early-init && property:ro.build.type=userdebug
-   setprop dalvik.vm.thread-suspend-timeout-ms 20000
+   setprop dalvik.vm.thread-suspend-timeout-ms 50000
 # device/sprd/mpool/module/vendor/fs/main.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on boot
 # block I/O vm.dirty parameters
     chmod 644 /proc/reserve_space/black_list
@@ -975,7 +1064,137 @@ on boot
 
 on property:vold.sdcard0.state=mounted
     write /sys/block/mmcblk1/queue/read_ahead_kb 256
+# device/sprd/mpool/module/vendor/fs/msoc/qogirl6/qogirl6.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
+on post-fs
+    write /sys/block/mmcblk0/queue/iostats 0
+    write /sys/block/mmcblk0/queue/read_ahead_kb 2048
+    write /sys/block/mmcblk0/queue/nr_requests 256
+    write /sys/block/dm-0/queue/read_ahead_kb 2048
+    write /sys/block/dm-1/queue/read_ahead_kb 2048
+    write /sys/block/dm-2/queue/read_ahead_kb 2048
+    write /sys/block/dm-3/queue/read_ahead_kb 2048
+    write /sys/block/dm-4/queue/read_ahead_kb 2048
+    write /sys/block/dm-5/queue/read_ahead_kb 2048
+    write /sys/block/dm-5/queue/read_ahead_kb 2048
+    write /sys/block/dm-6/queue/read_ahead_kb 2048
+    write /sys/block/dm-7/queue/read_ahead_kb 2048
+    write /sys/block/dm-8/queue/read_ahead_kb 2048
+    write /sys/block/dm-9/queue/read_ahead_kb 2048
+    write /sys/block/dm-10/queue/read_ahead_kb 2048
+
+#After bootcompleted,set these values to normal
+on property:sys.boot_completed=1
+    write /sys/block/mmcblk0/queue/iostats 1
+    write /sys/block/mmcblk0/queue/read_ahead_kb 128
+    write /sys/block/mmcblk0/queue/nr_requests 128
+    write /sys/block/dm-0/queue/read_ahead_kb 128
+    write /sys/block/dm-1/queue/read_ahead_kb 128
+    write /sys/block/dm-2/queue/read_ahead_kb 128
+    write /sys/block/dm-3/queue/read_ahead_kb 128
+    write /sys/block/dm-4/queue/read_ahead_kb 128
+    write /sys/block/dm-5/queue/read_ahead_kb 128
+    write /sys/block/dm-6/queue/read_ahead_kb 128
+    write /sys/block/dm-7/queue/read_ahead_kb 128
+    write /sys/block/dm-8/queue/read_ahead_kb 128
+    write /sys/block/dm-9/queue/read_ahead_kb 128
+    write /sys/block/dm-10/queue/read_ahead_kb 128
 # device/sprd/mpool/module/vendor/droidfw/msoc/qogirl6/qogirl6.rc
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 on property:sys.boot_completed=1
     # setup final cpuset
     write /dev/cpuset/top-app-high-perf/cpus 6-7
+# device/sprd/mpool/module/vendor/darwin/main.rc
+on boot
+    chmod 0741 /sys/kernel/turbo
+    chmod 0741 /sys/module/tran_turbo/parameters
+    chown system system /sys/module/tran_turbo/parameters/bhr_opp
+    chmod 0666 /sys/module/tran_turbo/parameters/bhr_opp
+    chown system system /sys/module/tran_turbo/parameters/bhr
+    chmod 0666 /sys/module/tran_turbo/parameters/bhr
+    chown system system /sys/module/tran_turbo/parameters/floor_bound
+    chmod 0666 /sys/module/tran_turbo/parameters/floor_bound
+    chown system system /sys/module/tran_turbo/parameters/kmin
+    chmod 0666 /sys/module/tran_turbo/parameters/kmin
+    chown system system /sys/kernel/turbo/gearbox/gearbox_fix_fps
+    chmod 0666 /sys/kernel/turbo/gearbox/gearbox_fix_fps
+    chown system system /sys/kernel/turbo/gearbox/gearbox_fix_fps_comm
+    chmod 0666 /sys/kernel/turbo/gearbox/gearbox_fix_fps_comm
+    chown system system /sys/kernel/turbo/gearbox/gearbox_tune_error_threshold
+    chmod 0666 /sys/kernel/turbo/gearbox/gearbox_tune_error_threshold
+    chown system system /sys/kernel/turbo/gearbox/gearbox_tune_quantile
+    chmod 0666 /sys/kernel/turbo/gearbox/gearbox_tune_quantile
+    chown system system /sys/kernel/turbo/gearbox/gearbox_soft_level
+    chmod 0666 /sys/kernel/turbo/gearbox/gearbox_soft_level
+    chown system system /sys/kernel/turbo/gearbox/gearbox_fps_list
+    chmod 0666 /sys/kernel/turbo/gearbox/gearbox_fps_list
+    chown system system /sys/kernel/turbo/hybrid/boost_ta
+    chmod 0666 /sys/kernel/turbo/hybrid/boost_ta
+    chown system system /sys/kernel/turbo/gearbox/margin_mode
+    chmod 0666 /sys/kernel/turbo/gearbox/margin_mode
+    chown system system /sys/kernel/turbo/gearbox/margin_mode_dbnc_a
+    chmod 0666 /sys/kernel/turbo/gearbox/margin_mode_dbnc_a
+    chown system system /sys/kernel/turbo/gearbox/margin_mode_dbnc_b
+    chmod 0666 /sys/kernel/turbo/gearbox/margin_mode_dbnc_b
+    chown system system /sys/module/tran_turbo/parameters/rescue_percent
+    chmod 0666 /sys/module/tran_turbo/parameters/rescue_percent
+    chown system system /sys/module/tran_turbo/parameters/rescue_percent_90
+    chmod 0666 /sys/module/tran_turbo/parameters/rescue_percent_90
+    chown system system /sys/module/tran_turbo/parameters/rescue_percent_120
+    chmod 0666 /sys/module/tran_turbo/parameters/rescue_percent_120
+    chown system system /sys/module/tran_turbo/parameters/rescue_enhance_f
+    chmod 0666 /sys/module/tran_turbo/parameters/rescue_enhance_f
+    chown system system /sys/module/tran_turbo/parameters/rescue_opp_c
+    chmod 0666 /sys/module/tran_turbo/parameters/rescue_opp_c
+    chown system system /sys/module/tran_turbo/parameters/rescue_opp_f
+    chmod 0666 /sys/module/tran_turbo/parameters/rescue_opp_f
+    chown system system /sys/kernel/turbo/hybrid/ultra_rescue
+    chmod 0666 /sys/kernel/turbo/hybrid/ultra_rescue
+    chown system system /sys/module/tran_turbo/parameters/deqtime_bound
+    chmod 0666 /sys/module/tran_turbo/parameters/deqtime_bound
+    chown system system /sys/module/tran_turbo/parameters/short_rescue_ns
+    chmod 0666 /sys/module/tran_turbo/parameters/short_rescue_ns
+    chown system system /sys/module/tran_turbo/parameters/min_rescue_percent
+    chmod 0666 /sys/module/tran_turbo/parameters/min_rescue_percent
+    chown system system /sys/module/tran_turbo/parameters/adjust_loading
+    chmod 0666 /sys/module/tran_turbo/parameters/adjust_loading
+    chown system system /sys/module/tran_turbo/parameters/loading_adj_cnt
+    chmod 0666 /sys/module/tran_turbo/parameters/loading_adj_cnt
+    chown system system /sys/module/tran_turbo/parameters/loading_debnc_cnt
+    chmod 0666 /sys/module/tran_turbo/parameters/loading_debnc_cnt
+    chown system system /sys/module/tran_turbo/parameters/loading_time_diff
+    chmod 0666 /sys/module/tran_turbo/parameters/loading_time_diff
+    chown system system /sys/module/tran_turbo/parameters/loading_th
+    chmod 0666 /sys/module/tran_turbo/parameters/loading_th
+    chown system system /sys/kernel/turbo/hybrid/llf_task_policy
+    chmod 0666 /sys/kernel/turbo/hybrid/llf_task_policy
+    chown system system /sys/kernel/turbo/hybrid/light_loading_policy
+    chmod 0666 /sys/kernel/turbo/hybrid/light_loading_policy
+    chown system system /sys/kernel/turbo/hybrid/switch_idleprefer
+    chmod 0666 /sys/kernel/turbo/hybrid/switch_idleprefer
+    chown system system /sys/kernel/turbo/hybrid/forecast_rescue_list
+    chmod 0666 /sys/kernel/turbo/hybrid/forecast_rescue_list
+    chown system system /sys/kernel/turbo/hybrid/forecast_rescue_enable
+    chmod 0666 /sys/kernel/turbo/hybrid/forecast_rescue_enable
+    chown system system /sys/kernel/turbo/hybrid/forecast_switch_release_freq
+    chmod 0666 /sys/kernel/turbo/hybrid/forecast_switch_release_freq
+    chown system system /sys/kernel/turbo/common/turbo_enable
+    chmod 0666 /sys/kernel/turbo/common/turbo_enable
+    chown system system /sys/kernel/turbo/common/systrace_mask
+    chmod 0666 /sys/kernel/turbo/common/systrace_mask
+    chown system system /sys/kernel/turbo/hybrid/policy0_min_freq
+    chmod 0666 /sys/kernel/turbo/hybrid/policy0_min_freq
+    chown system system /sys/kernel/turbo/hybrid/policy0_max_freq
+    chmod 0666 /sys/kernel/turbo/hybrid/policy0_max_freq
+    chown system system /sys/kernel/turbo/hybrid/policy6_min_freq
+    chmod 0666 /sys/kernel/turbo/hybrid/policy6_min_freq
+    chown system system /sys/kernel/turbo/hybrid/policy6_max_freq
+    chmod 0666 /sys/kernel/turbo/hybrid/policy6_max_freq
+
+on early-boot
+    insmod /vendor/lib/modules/tran_turbo.ko
+    insmod /vendor/lib/modules/tran_monitor.ko
+    insmod /vendor/lib/modules/tran_fpsmgr.ko
+    insmod /vendor/lib/modules/turbo_engine.ko

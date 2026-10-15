@@ -39,6 +39,11 @@
             "vendor": "SPRD",
             "id": "cap_MFNR4"
         },
+         {
+            "type": "MFNRNode",
+            "vendor": "SPRD",
+            "id": "cap_MFNR"
+        },
         {
             "type": "WaterMarkNode",
             "vendor": "SPRD",
@@ -53,6 +58,16 @@
             "type": "FaceDetectSDKNode",
             "vendor": "SPRD",
             "id": "cap_FaceDetect"
+        },
+        {
+            "type": "TranAlgoPluginNode",
+            "vendor": "TRAN",
+            "id": "cap_TranAlgoPlugin"
+        },
+        {
+            "type": "TranAlgoPluginNode",
+            "vendor": "TRAN",
+            "id": "cap_mf_TranAlgoPlugin"
         }
     ],
     "rootNodes": ["SourceNode1"],
@@ -83,14 +98,34 @@
                 "port": "mfnr"
             },
             "to": {
-                "name": "cap_MFNR4",
+                "name": "cap_MFNR",
                 "port": "in0"
             }
         },
         {
             "from": {
                 "name": "cap_MF_router",
+                "port": "tranMultiFrame"
+            },
+            "to": {
+                "name": "cap_mf_TranAlgoPlugin",
+                "port": "multi_cap_in"
+            }
+        },
+        {
+            "from": {
+                "name": "cap_MF_router",
                 "port": "flash"
+            },
+            "to": {
+                "name": "cap_YNRCNR",
+                "port": "in0"
+            }
+        },
+        {
+            "from": {
+                "name": "cap_mf_TranAlgoPlugin",
+                "port": "multi_cap_out"
             },
             "to": {
                 "name": "cap_YNRCNR",
@@ -109,7 +144,7 @@
         },
         {
             "from": {
-                "name": "cap_MFNR4",
+                "name": "cap_MFNR",
                 "port": "out0"
             },
             "to": {
@@ -123,7 +158,7 @@
                 "port": "high_bright"
             },
             "to": {
-                "name": "cap_FaceDetect",
+                "name": "cap_WaterMark",
                 "port": "in0"
             }
         },
@@ -161,6 +196,16 @@
             "from": {
                 "name": "cap_WaterMark",
                 "port": "out0"
+            },
+            "to": {
+                "name": "cap_TranAlgoPlugin",
+                "port": "cap_in"
+            }
+        },
+        {
+            "from": {
+                "name": "cap_TranAlgoPlugin",
+                "port": "cap_out"
             },
             "to": {
                 "name": "cap_Jpeg",

@@ -2,9 +2,9 @@ VERSION,1
 status,enable
 aplogrotate,enable
 prioritypath,internal
-sroot,internal
+sroot,default
 aplogfilesize,256
-aplogmaxsize,4096
+aplogmaxsize,99%
 uboot,1
 lastlog,1
 kernel,1

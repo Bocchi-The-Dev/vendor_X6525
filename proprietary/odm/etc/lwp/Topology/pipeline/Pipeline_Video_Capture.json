@@ -33,6 +33,11 @@
             "type": "JpegNode",
             "vendor": "SPRD",
             "id": "cap_Jpeg"
+        },
+        {
+            "type": "YNRCNRNode",
+            "vendor": "SPRD",
+            "id": "cap_YNRCNR"
         }
     ],
     "rootNodes": ["SourceNode0", "SourceNode1", "SourceNode2", "SourceNode3"],
@@ -43,7 +48,7 @@
                 "port": "result_out"
             },
             "to": {
-                "name": "cap_Jpeg",
+                "name": "cap_YNRCNR",
                 "port": "in0"
             }
         },
@@ -53,7 +58,7 @@
                 "port": "result_out"
             },
             "to": {
-                "name": "cap_Jpeg",
+                "name": "cap_YNRCNR",
                 "port": "in0"
             }
         },
@@ -71,6 +76,16 @@
             "from": {
                 "name": "SourceNode3",
                 "port": "result_out"
+            },
+            "to": {
+                "name": "cap_Jpeg",
+                "port": "in0"
+            }
+        },
+        {
+            "from": {
+                "name": "cap_YNRCNR",
+                "port": "out0"
             },
             "to": {
                 "name": "cap_Jpeg",

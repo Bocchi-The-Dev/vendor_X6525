@@ -29,6 +29,11 @@
             "vendor": "SPRD",
             "id": "cap_MFNR4"
         },
+         {
+            "type": "MFNRNode",
+            "vendor": "SPRD",
+            "id": "cap_MFNR"
+        },
         {
             "type": "YNRCNRNode",
             "vendor": "SPRD",
@@ -103,13 +108,13 @@
                 "port": "mfnr"
             },
             "to": {
-                "name": "cap_MFNR4",
+                "name": "cap_MFNR",
                 "port": "in0"
             }
         },
         {
             "from": {
-                "name": "cap_MFNR4",
+                "name": "cap_MFNR",
                 "port": "out0"
             },
             "to": {

@@ -49,6 +49,11 @@
             "vendor": "SPRD",
             "id": "cap_MFNR4"
         },
+         {
+            "type": "MFNRNode",
+            "vendor": "SPRD",
+            "id": "cap_MFNR"
+        },
         {
             "type": "WaterMarkNode",
             "vendor": "SPRD",
@@ -65,34 +70,14 @@
             "id": "cap_Jpeg"
         },
         {
-            "type": "VdBlurless4Node",
-            "vendor": "VD",
-            "id": "cap_VDBlurless"
+            "type": "TranAlgoPluginNode",
+            "vendor": "TRAN",
+            "id": "cap_TranAlgoPlugin"
         },
         {
-            "type": "MfsrNode",
-            "vendor": "SPRD",
-            "id": "cap_MFSR"
-        },
-        {
-            "type": "VdSuperphotoNode",
-            "vendor": "VD",
-            "id": "cap_VDSuperphoto"
-        },
-        {
-            "type": "ArcCHDRNode",
-            "vendor": "SPRD",
-            "id": "cap_CHDR"
-        },
-        {
-            "type": "HDRRouterNode",
-            "vendor": "SPRD",
-            "id": "cap_HDR_router"
-        },
-        {
-            "type": "VdUpScaleNode",
-            "vendor": "VD",
-            "id": "cap_VDUpScale"
+            "type": "TranAlgoPluginNode",
+            "vendor": "TRAN",
+            "id": "cap_mf_TranAlgoPlugin"
         }
     ],
     "rootNodes": ["SourceNode0", "SourceNode2", "SourceNode3"],
@@ -140,71 +125,21 @@
         {
             "from": {
                 "name": "cap_MF_router",
-                "port": "vdblurless"
+                "port": "mfnr"
             },
             "to": {
-                "name": "cap_VDBlurless",
-                "port": "in0"
-            }
-        },
-        {
-            "from": {
-                "name": "cap_VDBlurless",
-                "port": "out0"
-            },
-            "to": {
-                "name": "cap_HDR_router",
-                "port": "in0"
-            }
-        },
-        {
-            "from": {
-                "name": "cap_HDR_router",
-                "port": "out0"
-            },
-            "to": {
-                "name": "cap_CHDR",
-                "port": "in0"
-            }
-        },
-        {
-            "from": {
-                "name": "cap_CHDR",
-                "port": "out0"
-            },
-            "to": {
-                "name": "cap_YNRCNR",
-                "port": "in0"
-            }
-        },
-        {
-            "from": {
-                "name": "cap_HDR_router",
-                "port": "out1"
-            },
-            "to": {
-                "name": "cap_YNRCNR",
+                "name": "cap_MFNR",
                 "port": "in0"
             }
         },
         {
             "from": {
                 "name": "cap_MF_router",
-                "port": "mfsr"
+                "port": "tranMultiFrame"
             },
             "to": {
-                "name": "cap_VDSuperphoto",
-                "port": "in0"
-            }
-        },
-        {
-            "from": {
-                "name": "cap_VDSuperphoto",
-                "port": "out0"
-            },
-            "to": {
-                "name": "cap_YNRCNR",
-                "port": "in0"
+                "name": "cap_mf_TranAlgoPlugin",
+                "port": "multi_cap_in"
             }
         },
         {
@@ -219,8 +154,28 @@
         },
         {
             "from": {
+                "name": "cap_mf_TranAlgoPlugin",
+                "port": "multi_cap_out"
+            },
+            "to": {
+                "name": "cap_YNRCNR",
+                "port": "in0"
+            }
+        },
+        {
+            "from": {
                 "name": "cap_MF_router",
                 "port": "single"
+            },
+            "to": {
+                "name": "cap_YNRCNR",
+                "port": "in0"
+            }
+        },
+        {
+            "from": {
+                "name": "cap_MFNR",
+                "port": "out0"
             },
             "to": {
                 "name": "cap_YNRCNR",
@@ -273,14 +228,14 @@
                 "port": "out0"
             },
             "to": {
-                "name": "cap_VDUpScale",
-                "port": "in0"
+                "name": "cap_TranAlgoPlugin",
+                "port": "cap_in"
             }
         },
         {
             "from": {
-                "name": "cap_VDUpScale",
-                "port": "out0"
+                "name": "cap_TranAlgoPlugin",
+                "port": "cap_out"
             },
             "to": {
                 "name": "cap_Jpeg",

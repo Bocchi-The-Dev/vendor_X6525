@@ -3,8 +3,8 @@ status,enable
 aplogrotate,enable
 prioritypath,internal
 sroot,/cache/
-aplogfilesize,56
-aplogmaxsize,99%
+aplogfilesize,10
+aplogmaxsize,50%
 uboot,1
 lastlog,1
 kernel,1
